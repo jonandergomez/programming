@@ -478,28 +478,28 @@ public class ListIntLinked
 
     public void selectionSort()
     {
-      for( NodeInt i=this.first; i != null; i=i.getNext() ) {
-        NodeInt k = i;
-        for( NodeInt j=i.getNext(); j != null; j=j.getNext() ) {
-          if ( j.getValue() < k.getValue() ) k = j;
+        for( NodeInt i=this.first; i != null; i=i.getNext() ) {
+            NodeInt k = i;
+            for( NodeInt j=i.getNext(); j != null; j=j.getNext() ) {
+                if ( j.getValue() < k.getValue() ) k = j;
+            }
+            if ( k.getValue() != i.getValue() ) {
+                int temp = k.getValue();
+                k.setValue( i.getValue() );
+                i.setValue( temp );
+            }
         }
-        if ( k.getValue() != i.getValue() ) {
-          int temp = k.getValue();
-          k.setValue( i.getValue() );
-          i.setValue( temp );
-        }
-      }
     }
     public void insertionSort()
     {
-      for( NodeInt i=this.first; i != null; i=i.getNext() ) {
-        NodeInt k=i;
-        int value_at_i=i.getValue();
-        while( k.getPrevious() != null && value_at_i < k.getPrevious().getValue() ) {
-          k.setValue(k.getPrevious().getValue());
-          k=k.getPrevious();
+        for( NodeInt i=this.first; i != null; i=i.getNext() ) {
+            NodeInt k=i;
+            int value_at_i=i.getValue();
+            while( k.getPrevious() != null && value_at_i < k.getPrevious().getValue() ) {
+                k.setValue(k.getPrevious().getValue());
+                k=k.getPrevious();
+            }
+            if ( k != i ) k.setValue(value_at_i);
         }
-        if ( k != i ) k.setValue(value_at_i);
-      }
     }
 }
