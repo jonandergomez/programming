@@ -9,6 +9,9 @@
 build/
 temp/
 
+# Java
+classes
+
 # Documentation
 docs/doxygen/*
 !docs/doxygen/Doxyfile
