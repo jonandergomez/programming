@@ -11,6 +11,8 @@ temp/
 
 # Java
 classes
+*.class
+docs/
 
 # Documentation
 docs/doxygen/*

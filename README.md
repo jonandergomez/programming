@@ -1,9 +1,9 @@
 # Programming
 
 ### Purpose
-This repository contains the code written by Jon Ander Gómez during his classes of
-computer programming at the university for first academic year of
-the Bachelor's Degree in Computer Science.
+This repository contains code written by Jon Ander Gómez as examples for students
+during his classes of computer programming at the university.
+All corresponds to the first academic year of the Bachelor's Degree in Computer Science.
 
 ### The subjects related to this repository are **IIP** and **PRG**
 
@@ -11,3 +11,6 @@ the Bachelor's Degree in Computer Science.
 * PRG is the acronym of the second semester subject and stands for Spanish title _**Programación**_
 
 
+### Folders organised in academic years
+
+* [2019-2020](code/2019-2020)
