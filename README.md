@@ -11,6 +11,8 @@ All corresponds to the first academic year of the Bachelor's Degree in Computer 
 * PRG is the acronym of the second semester subject and stands for Spanish title _**Programación**_
 
 
-### Folders organised by academic years
+### Folders are organised by topics.
 
-* [2019-2020](code/2019-2020)
+In some cases you will find examples in one folder covering topics assigned to another folder, please, accept my apologies if this confuses you.
+
+* [code](code)
