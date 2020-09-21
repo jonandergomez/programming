@@ -31,3 +31,5 @@ In some cases you will find examples in one folder covering topics assigned to a
 The following figure shows the distribution of *Computer Programming* as a matter tought in several subjects along the Degree in Computer Engineering.
 
 ![Compute Programming contents](images/Computer-Programming-contents.png)
+
+
