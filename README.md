@@ -26,6 +26,10 @@ In some cases you will find examples in one folder covering topics assigned to a
 
 
 ### Distribution of the contents of Computer Programming
-The following figure as a matter tought in several subjects throughout the Degree in Computer Engineering.
+The following figure shows the distribution of *Computer Programming* as a matter tought in several subjects along the Degree in Computer Engineering.
+
+<p style="text-align: center;">
+  <img src="images/Computer-Programming-contents.pdf" alt="Computer Programming" height="80%" width="80%">
+</p>
 
 ![Compute Programming contents](images/Computer-Programming-contents.pdf)
