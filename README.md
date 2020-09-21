@@ -15,7 +15,9 @@ The School of Informatics is know in Spanish as ***Escuela Técnica Superior de 
 * IIP is the acronym of the first semester subject and stands for Spanish title _**Introducción a la Informática y la Programación**_
 * PRG is the acronym of the second semester subject and stands for Spanish title _**Programación**_
 
-[Here](images/Computer-programming-in-the-GII.pdf) you can see where both subjects are in the context of the Bachelor's Degree in Computer Engineering.
+The next figure shows where both subjects are in the context of the Bachelor's Degree in Computer Engineering.
+
+![Here](images/Computer-programming-in-the-GII.png)
 
 
 ### Folders with code are organised by topics
@@ -28,8 +30,4 @@ In some cases you will find examples in one folder covering topics assigned to a
 ### Distribution of the contents of Computer Programming
 The following figure shows the distribution of *Computer Programming* as a matter tought in several subjects along the Degree in Computer Engineering.
 
-<p style="text-align: center;">
-  <img src="images/Computer-Programming-contents.pdf" alt="Computer Programming" height="80%" width="80%">
-</p>
-
-![Compute Programming contents](images/Computer-Programming-contents.pdf)
+![Compute Programming contents](images/Computer-Programming-contents.png)
