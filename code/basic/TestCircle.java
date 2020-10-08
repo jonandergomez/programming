@@ -17,6 +17,15 @@ public class TestCircle
         System.out.println("CenterY " + c1.getCentreY());
         System.out.println(c1.toString());
 
+        /* The following lines will raise a compiler error
+           because they try to access private attributes.
+           
+        System.out.println("Radius  " + c1.radius);
+        System.out.println("Colour  " + c1.colour);
+        System.out.println("CenterX " + c1.centreX);
+        System.out.println("CenterY " + c1.centreY);
+        */
+
         System.out.println();
 
         System.out.println(Math.E);
