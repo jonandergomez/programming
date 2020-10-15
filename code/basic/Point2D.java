@@ -74,6 +74,15 @@ public class Point2D
         return String.format("(%.3f, %.3f)", x, y);
     }
 
+    public double r()
+    {
+        return Math.sqrt(x*x + y*y);
+    }
+    public double atan()
+    {
+        return Math.atan2(y, x);
+    }
+
     /*
         The operator new performs the following three steps:
 
@@ -98,15 +107,16 @@ public class Point2D
                         + "points the " + Point2D.DIMENSION + "-dimensional space.");
         System.out.println();
 
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
-        System.out.println(p4); /* prints the same of first println() because p4
-                                   is a reference variable whose contents is the
-                                   memory address where the object pointed by p1
-                                   is stored, in other words, p1 and p4 contain
-                                   the same memory address so both reference to the
-                                   same object. */
+        System.out.println(p1.toString() + " " + p1.r() + " " + p1.atan());
+        System.out.println(p2.toString() + " " + p2.r() + " " + p2.atan());
+        System.out.println(p3.toString() + " " + p3.r() + " " + p3.atan());
+        System.out.println(p4.toString() + " " + p4.r() + " " + p4.atan());
+        /* prints the same of first println() because p4
+           is a reference variable whose contents is the
+           memory address where the object pointed by p1
+           is stored, in other words, p1 and p4 contain
+           the same memory address so both reference to the
+           same object. */
         System.out.println();
         System.out.println("A total of " + Point2D.objectCounter
                         + " objects of the class Point2D were created. Bye!");
