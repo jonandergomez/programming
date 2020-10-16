@@ -1,6 +1,6 @@
 public class Trace01
 {
-    public static void main(String[] args )
+    public static void main(String[] args)
     {
         int a = 12, b = 8, c = 6;
         System.out.println(a + " " + b + " " + c);

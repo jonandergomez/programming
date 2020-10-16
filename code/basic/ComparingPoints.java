@@ -5,7 +5,7 @@ import java.io.*;
 
 public class ComparingPoints
 {
-    private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
+    private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
     public static void main(String [] args)
     {

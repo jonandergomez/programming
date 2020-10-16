@@ -3,12 +3,11 @@ import java.util.*;
 import java.io.*;
 
 
-public class Basic 
+public class Basic
 {
-    private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
+    private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
-
-    public static void main( String [] args )
+    public static void main(String [] args)
     {
     }
 }

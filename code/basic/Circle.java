@@ -20,7 +20,7 @@ public class Circle {
     }
 
     /** Creates a generic circle with radius r, colour c and centred at (px,py). */
-    public Circle( double r, String c, int px, int py )
+    public Circle(double r, String c, int px, int py)
     {
         radius = r;
         colour = c;

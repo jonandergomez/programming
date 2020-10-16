@@ -4,14 +4,14 @@ import java.util.*;
 import java.io.*;
 
 
-public class SphereExample1 
+public class SphereExample1
 {
-    private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
+    private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
 
-    public static void main( String [] args )
+    public static void main(String [] args)
     {
-        System.out.print( "\nPlease, enter a positive real value for the radius: " );
+        System.out.print("\nPlease, enter a positive real value for the radius: ");
         double radius = input.nextDouble();
 
         double area, volume1, volume2;
@@ -21,8 +21,8 @@ public class SphereExample1
         volume2 = area * radius / 3;
 
 
-        System.out.printf( "   area = %30.20f\n", area );
-        System.out.printf( "volume1 = %30.20f\n", volume1 );
-        System.out.printf( "volume2 = %30.20f\n", volume2 );
+        System.out.printf("   area = %30.20f\n", area);
+        System.out.printf("volume1 = %30.20f\n", volume1);
+        System.out.printf("volume2 = %30.20f\n", volume2);
     }
 }

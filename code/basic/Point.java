@@ -1,4 +1,3 @@
-
 /*
     mkdir docs
     javadoc -d docs -private Point.java
@@ -20,7 +19,7 @@ public class Point
      * @param x value for x-axis
      * @param y value for y-axis
      */
-    public Point( double x, double y  )
+    public Point(double x, double y)
     {
         this.x = x;
         this.y = y;
@@ -31,7 +30,7 @@ public class Point
      */
     public Point()
     {
-        this( 0.0, 0.0 );
+        this(0.0, 0.0);
     }
 
     /**
@@ -51,12 +50,12 @@ public class Point
      * Sets the value of private attribute <code>x</code>.
      *
      */
-    public void setX( double x ) { this.x = x; }
+    public void setX(double x) { this.x = x; }
     /**
      * Sets the value of private attribute <code>y</code>.
      *
      */
-    public void setY( double y ) { this.y = y; }
+    public void setY(double y) { this.y = y; }
 
     /**
      * Returns the distance between the current object
@@ -67,12 +66,12 @@ public class Point
      *
      * @return The distance between <code>this</code> and <code>other</code>.
      */
-    public double distance( Point other )
+    public double distance(Point other)
     {
         double dx = this.x - other.x;
         double dy = this.y - other.y;
 
-        return Math.sqrt( dx*dx + dy*dy );
+        return Math.sqrt(dx*dx + dy*dy);
     }
 
     /**
@@ -83,9 +82,9 @@ public class Point
      */
     public double distanceFromOrigin()
     {
-        // A temporary object of class Point is created for representing 
+        // A temporary object of class Point is created for representing
         // the origin of coordinates: (0,0)
-        return distance( new Point() );
+        return distance(new Point());
     }
 
     /**
@@ -95,7 +94,7 @@ public class Point
      * @param deltaX  a real value for modifying the value of <code>x</code> attribute.
      * @param deltaY  a real value for modifying the value of <code>y</code> attribute.
      */
-    public void move( double deltaX, double deltaY )
+    public void move(double deltaX, double deltaY)
     {
         this.x += deltaX;
         this.y += deltaY;
@@ -106,7 +105,7 @@ public class Point
      */
     public void moveRandom()
     {
-        move( random(), random() );
+        move(random(), random());
     }
 
     /**
@@ -117,17 +116,17 @@ public class Point
      */
     private double random()
     {
-        return (Math.random()-0.5) * ( 2 * distanceFromOrigin() + 1 );
+        return (Math.random() - 0.5) * (2 * distanceFromOrigin() + 1);
     }
 
     /**
-     * Returns an object of class <code>String</code> representing the 
+     * Returns an object of class <code>String</code> representing the
      * current point.
      */
     @Override
     public String toString()
     {
-        return String.format( "( %.2f, %.2f )", x, y );
+        return String.format("( %.2f, %.2f )", x, y);
     }
 
     /**
@@ -137,9 +136,9 @@ public class Point
      * @return <code>true</code> if both objects are equal, <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object other )
+    public boolean equals(Object other)
     {
-        if ( other instanceof Point ) {
+        if (other instanceof Point) {
             Point p = (Point)other;
 
             return this.x == p.x && this.y == p.y;

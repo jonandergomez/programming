@@ -3,7 +3,7 @@ public class Date
 {
     private int year, month, day;
 
-    public Date( int d, int m, int y )
+    public Date(int d, int m, int y)
     {
         year = y;
         month = m;
@@ -17,19 +17,21 @@ public class Date
     @Override
     public String toString()
     {
-        return String.format( "%04d-%02d-%02d", year, month, day );
+        return String.format("%04d-%02d-%02d", year, month, day);
     }
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof Date ) {
+        if (o instanceof Date) {
             Date other = (Date)o;
 
-            return this.year == other.year && this.month == other.month && this.day == other.day;
+            return this.year == other.year
+                && this.month == other.month
+                && this.day == other.day;
         }
         return false;
     }
-    public int compareTo( Date other )
+    public int compareTo(Date other)
     {
         return this.toInt() - other.toInt();
     }
@@ -40,14 +42,14 @@ public class Date
 
     public Date clone()
     {
-        return new Date( day, month, year );
+        return new Date(day, month, year);
     }
 
-    public int getAge( Date reference )
+    public int getAge(Date reference)
     {
         int age = reference.year - this.year;
 
-        if ( this.month * 100 + this.day < reference.month * 100 + reference.day )
+        if (this.month * 100 + this.day < reference.month * 100 + reference.day)
             age--;
 
         return age;
