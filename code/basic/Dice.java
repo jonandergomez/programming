@@ -1,15 +1,14 @@
 import java.util.*;
 import java.io.*;
 
-public class Dice2
+public class Dice
 {
     private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
-
     public static void main(String [] args)
     {
-        Random r = new Random();
+        int dice = (int)(6 * Math.random()) + 1;
 
-        System.out.println("dice thrown with value: " + (r.nextInt(6)+1));
+        System.out.println("The roll of the dice is: " + dice);
     }
 }
