@@ -9,7 +9,7 @@ public class CharExample3
         char letterN = 'n';
         letterN = (char)(letterN + ('A' - 'a'));
 
-        System.out.prinln(letterA + '\t' + letterB + '\t'
-                          letterC + '\t' + letterN);
+        System.out.println(letterA + "\t" + letterB + "\t" + 
+                           letterC + "\t" + letterN);
     }
 }
