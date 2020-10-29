@@ -25,3 +25,7 @@ The scripts to compile and run the example illustrate how
 to create a JAR file and how to reference JAR files to
 compile classes which use the package, and how to invoke
 the JVM to use packages stored in JAR files.
+
+Scripts to compile and run examples, and to generate
+the documentation and clean all the stuff,
+can be found [here](scripts).
