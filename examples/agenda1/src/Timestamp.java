@@ -232,7 +232,7 @@ public class Timestamp
       *
       * @param o A reference to the object to be compared with the current one
       *          to check if both are equal.
-      * @return <code>true</code> if <code>o</code> references an object of this
+      * @return <code>true</code> if <code>o</code> references to an object of this
       *         class and all the attributes match, <code>false</code> otherwise.
       */
     @Override
