@@ -253,6 +253,16 @@ public class Timestamp
             // the comparison is not possible and we have to return false
             return false;
         }
+
+        /* ALTERNATIVE
+            return o instanceof timestamp
+                && this.year    == (Timestamp)o.year
+                && this.month   == (Timestamp)o.month
+                && this.day     == (Timestamp)o.day
+                && this.hour    == (Timestamp)o.hour
+                && this.minutes == (Timestamp)o.minutes
+                && this.seconds == (Timestamp)o.seconds;
+        */
     }
 
     /** Returns an object of the class <code>String</code> with the reprsentation
@@ -265,6 +275,8 @@ public class Timestamp
     @Override
     public String toString()
     {
+        // returns the timestamp in the format YYYY-MM-DD hh:mm:ss
+        //                                     2020-01-07 01:06:02
         return String.format("%04d-%02d-%02d %02d:%02d:%02d",
                             this.year, this.month, this.day,
                             this.hour, this.minutes, this.seconds);
@@ -300,6 +312,7 @@ public class Timestamp
         else                                   return  0;
 
         /* alternative
+                                  YYYYMMDDhhmmss
         long l_this = this.year    * 10000000000L
                     + this.month   * 100000000L
                     + this.day     * 1000000L

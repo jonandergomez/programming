@@ -1,6 +1,6 @@
 # Simple version of an agenda without contacts
 
-This example is focused in the class
+This example is focused on the class
 [**Event**](src/Event.java)
 that will use objects of the class
 [**Timestamp**](src/Timestamp.java)
