@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class TestMeasure
 {
     private TestMeasure() { }
-    
+
     public static void main(String[] args)
     {
         /*
@@ -32,15 +32,16 @@ public class TestMeasure
         System.out.print("\n Enter the noise level: " );
         double noise = input.nextDouble();
 
-      
+
         /*
            c.(0.5 points)
            Create another measure 'm2' with the station name and the noise level read
            previously from the keyboard, and using the current UTC time as the instant.
          */
         // TO BE COMPLETED
-        Measure m2 = new Measure(new TimeInstant(), station, noise);
-       
+        TimeInstant t = new TimeInstant();
+        Measure m2 = new Measure(t, station, noise);
+
         /*
            d.(0.25 points)
            Update the measure 'm1' to reduce its noise level at 50%
@@ -54,7 +55,7 @@ public class TestMeasure
          */
         System.out.println(m1);
         System.out.println(m2);
-        
+
         /*
            f.(0.5 points)
            Show on screen whether both measures ('m1' and 'm2') exceed the
@@ -67,7 +68,7 @@ public class TestMeasure
         System.out.println("Is measures 1 excedding the limits? " + m1.exceedsMax());
         System.out.println("Is measures 2 excedding the limits? " + m2.exceedsMax());
         */
-        
+
         /*
            g.(0.5 points)
            Show on screen whether both measures are equal.
