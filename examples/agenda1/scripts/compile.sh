@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eu
+#!/bin/bash -eu
 
 # compiles the package agenda1
 for file in Timestamp.java TimeDelta.java Event.java
