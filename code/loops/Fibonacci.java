@@ -3,7 +3,7 @@ import java.io.*;
 
 /*
   More info in the following link:
-  
+
     https://en.wikipedia.org/wiki/Fibonacci_number
 */
 
@@ -19,11 +19,11 @@ public class Fibonacci
         }
     }
 
-    public static long fib( int n )
+    public static long fib(int n)
     {
-        long fib=0, fib_ant=1;
+        long fib = 1, fib_ant = -1;
 
-        for( int i=0; i < n; i++ ) {
+        for (int i=0; i <= n; i++) {
             fib = fib + fib_ant;
             fib_ant = fib - fib_ant;
         }

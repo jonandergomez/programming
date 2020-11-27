@@ -46,10 +46,10 @@ public class RussianProduct
 
             if ((b % 2) == 1) p += a;
 
+            System.out.printf("inside the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
+
             a <<= 1;
             b >>= 1;
-
-            System.out.printf("inside the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
         }
         System.out.printf(" after the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
 
