@@ -2,21 +2,26 @@
 import java.util.*;
 import java.io.*;
 
-public class RussianProduct 
+/*
+See more details in this link
+    https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication
+*/
+
+public class RussianProduct
 {
-    public static int iterative( int a, int b )
+    public static int iterative(int a, int b)
     {
         int p=0;
         int sign=1;
 
-        if ( b < 0 ) { a = -a; b = -b; }
-        if ( a < 0 ) { sign = -1; a = -a; }
+        if (b < 0) { a = -a; b = -b; }
+        if (a < 0) { sign = -1; a = -a; }
 
-        if ( a < b ) { int temp = a; a = b; b = temp; }
+        if (a < b) { int temp = a; a = b; b = temp; }
 
-        while( b > 0 ) {
-            
-            if ( ( b % 2 ) == 1 ) p += a;
+        while (b > 0) {
+
+            if ((b % 2) == 1) p += a;
 
             a <<= 1;
             b >>= 1;
@@ -24,56 +29,84 @@ public class RussianProduct
 
         return sign * p;
     }
+    public static int iterative_debug(int a, int b)
+    {
+        int p=0;
+        int sign=1;
 
-    public static int wrapper_recursive( int a, int b )
+        if (b < 0) { a = -a; b = -b; }
+        if (a < 0) { sign = -1; a = -a; }
+
+        if (a < b) { int temp = a; a = b; b = temp; }
+
+        System.out.printf("before the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
+
+        while (b > 0) {
+
+            if ((b % 2) == 1) p += a;
+
+            a <<= 1;
+            b >>= 1;
+
+            System.out.printf("inside the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
+        }
+        System.out.printf(" after the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
+
+        return sign * p;
+    }
+
+    public static int wrapper_recursive(int a, int b)
     {
         int sign=1;
-        if ( b < 0 ) { a = -a; b = -b; }
-        if ( a < 0 ) { sign = -1; a = -a; }
+        if (b < 0) { a = -a; b = -b; }
+        if (a < 0) { sign = -1; a = -a; }
 
-        if ( a < b ) {
-            return sign * recursive( b, a );
+        if (a < b) {
+            return sign * recursive(b, a);
         } else {
-            return sign * recursive( a, b );
+            return sign * recursive(a, b);
         }
     }
-    public static int recursive( int a, int b )
+    public static int recursive(int a, int b)
     {
-        if ( b == 0 ) {
-
+        if (b == 0) {
             return 0;
-
-        } else if ( b == 1 ) {
-
+        } else if (b == 1) {
             return a;
-
-        } else if ( b > 1 ) {
-
-            if ( (b % 2) == 1 ) {
-                return recursive( a << 1, b >> 1 ) + a;
+        } else if (b > 1) {
+            if ((b % 2) == 1) {
+                return recursive(a << 1, b >> 1) + a;
             } else {
-                return recursive( a << 1, b >> 1 );
+                return recursive(a << 1, b >> 1);
             }
         } else {
             throw new Error( "Negative arguments are not accepted!" );
         }
     }
 
-    public static void main( String [] args )
+    public static void main(String [] args)
     {
+        boolean stressTest = false;
         Random r = new Random();
 
-        while( true ) {
-            int a = r.nextInt( 100000 );
-            int b = r.nextInt( 100000 );
+        if (stressTest) {
+            while (true) {
+                int a = r.nextInt(100000);
+                int b = r.nextInt(100000);
 
-            int p1 = a*b;
-            int p2 = iterative(a,b);
-            int p3 = recursive(a,b);
+                int p1 = a * b;
+                int p2 = iterative(a, b);
+                int p3 = recursive(a, b);
 
-            System.out.printf( " %6d %6d %10d  %10d  %10d\n", a, b, p1, p2, p3 );
+                System.out.printf(" %6d %6d %15d  %15d  %15d\n", a, b, p1, p2, p3);
 
-            if ( p1 != p2 || p1 != p3 ) throw new Error( "Differences were found!" );
+                if (p1 != p2 || p1 != p3) throw new Error("Differences were found!");
+            }
+        } else {
+            int a = r.nextInt(100000);
+            int b = r.nextInt(100000);
+            int p = iterative_debug(a, b);
+            System.out.printf(" %6d %6d %15d %15d\n", a, b, p, a*b);
         }
     }
 }
