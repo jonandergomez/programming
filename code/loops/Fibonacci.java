@@ -1,10 +1,13 @@
-
-
 import java.util.*;
 import java.io.*;
 
+/*
+  More info in the following link:
+  
+    https://en.wikipedia.org/wiki/Fibonacci_number
+*/
 
-public class Fibonacci 
+public class Fibonacci
 {
     private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
 
