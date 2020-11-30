@@ -7,7 +7,6 @@ int main(int argc, char *arg[])
 
     {
         int x = 91;
-
         printf("%d\n", x);
     }
     printf("%d\n", x);
