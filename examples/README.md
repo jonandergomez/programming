@@ -5,3 +5,4 @@ The purpose of examples included in this folder is just to provide students with
 ### _The examples contained here could be incomplete because are used in earlier stages of my course on Computing Programming_
 
 * [First version of a personal agenda without contacts](agenda1)
+* [Use of COVID-19 of the world to illustrate how to work with arrays ](covid_19)
