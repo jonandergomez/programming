@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class TestRainfall 
+public class TestRainfall
 {
     private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
 
@@ -21,6 +21,9 @@ public class TestRainfall
         Rainfall rf = null;
         int    option = 0;
         int    threshold;
+        double litres_per_square_meter, lowerBound, upperBound;
+        String res;
+        String [] result2;
 
         do {
             option = menu();
@@ -46,13 +49,13 @@ public class TestRainfall
                 case 4:
                     System.out.print("\n\t Please, enter the threshold in litres/m2: ");
                     threshold = input.nextInt();
-                    String [] result2 = rf.daysItRainedMoreThan(threshold);
+                    result2 = rf.daysItRainedMoreThan(threshold);
                     for (int i = 0; i < result2.length; i++) {
                         System.out.println(result2[i]);
                     }
                     System.out.print("\n Press ENTER to continue ... ");
                     input.nextLine();
-                    break; 
+                    break;
 
                 case 5:
                     double maxRainfall = rf.maxRainfall();
@@ -67,10 +70,34 @@ public class TestRainfall
                 case 6:
                     System.out.print("\n\t Please, enter the threshold in litres/m2: ");
                     threshold = input.nextInt();
-                    String res = rf.findSubsquenceOfAtLeastThreeDaysItRainedMoreThan(threshold);
+                    res = rf.findSubsquenceOfAtLeastThreeDaysItRainedMoreThan(threshold);
                     System.out.println("\n\n" + res + "\n");
                     break;
-                    
+
+                case 7:
+                    System.out.print("\n\t Please, enter the value in litres/m2 you want to find: ");
+                    litres_per_square_meter = input.nextDouble();
+                    res = rf.findMeasurement(litres_per_square_meter);
+                    System.out.println("\n\n" + res + "\n");
+                    break;
+
+                case 8:
+                case 9:
+                    System.out.print("\n\t Please, enter the lower and upper bounds litres/m2: ");
+                    lowerBound = input.nextDouble();
+                    upperBound = input.nextDouble();
+                    if (option == 8) {
+                        res = rf.dayItRainedBetween(lowerBound, upperBound);
+                        System.out.println("\n\n" + res + "\n");
+                    } else if (option == 9) {
+                        result2 = rf.daysItRainedBetween(lowerBound, upperBound);
+                        for (int i = 0; i < result2.length; i++) {
+                            System.out.println(result2[i]);
+                        }
+                        System.out.print("\n Press ENTER to continue ... ");
+                        input.nextLine();
+                    }
+                    break;
 
                 case 11:
                     System.out.print("\n\t Enter the filename: ");
@@ -114,6 +141,9 @@ public class TestRainfall
             System.out.println("\t 4. Days it rained more than ... ");
             System.out.println("\t 5. Dates it rained the most. ");
             System.out.println("\t 6. Subsequence of days it rained more than ... ");
+            System.out.println("\t 7. Search for a specific value of litres per square meter. ");
+            System.out.println("\t 8. Day it rained in a given interval.");
+            System.out.println("\t 9. Days it rained in a given interval.");
             System.out.println();
             System.out.println("\t 11. Load from a file. ");
             System.out.println("\t 12. Store to a file. ");
@@ -132,7 +162,7 @@ public class TestRainfall
             }
 
         } while(!valid_option);
-        
+
         return option;
     }
 }

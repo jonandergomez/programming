@@ -78,7 +78,8 @@ public class TestingAgenda2
                                                       int year = input.nextInt();
                                                       input.nextLine();
 
-        agenda.addInOrder(new Contact(lastname, name, email, phoneNumber, new etsinf.prg.agenda2.Date(day, month, year)));
+        agenda.addInOrder(new Contact(lastname, name, email, phoneNumber,
+                                      new etsinf.prg.agenda2.Date(day, month, year)));
     }
 
     private static void removeExistingContact(Agenda agenda)
