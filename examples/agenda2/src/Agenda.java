@@ -35,14 +35,11 @@ public class Agenda
     public int getPeopleSize() { return peopleSize; }
     public int getEventsSize() { return eventsSize; }
 
-    public Contact getContactAt(int i)
-    {
-        return people[i];
-    }
-    public Event getEventAt(int i)
-    {
-        return events[i];
-    }
+    public Contact [] getPeople() { return people; }
+    public Event [] getEvents() { return events; }
+
+    public Contact getContactAt(int i) { return people[i]; }
+    public Event getEventAt(int i) { return events[i]; }
 
     private void growPeople()
     {
@@ -215,10 +212,10 @@ public class Agenda
         Contact [] youngerPeople = new Contact [counter];
 
         // copies the people that is younger than 'age' to the new array
-        counter = 0;
+        int index = 0;
         for (int i = 0; i < peopleSize; ++i)
             if (people[i].getAge(reference) < age)
-                youngerPeople[counter++] = people[i];
+                youngerPeople[index++] = people[i];
 
         // returns the array with the people younger than 'age'
         return youngerPeople;
