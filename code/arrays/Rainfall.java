@@ -28,7 +28,7 @@ public class Rainfall
             case  8:
             case 10:
             case 12: return 31;
-            
+
             case  4:
             case  6:
             case  9:
@@ -55,9 +55,9 @@ public class Rainfall
             // This loop is going to be repeated for all the values of month from 1 to 12, both included.
             for (int day=1; day < data[month].length; day++) {
                 // This loop is going to be repeated for all the values of day from 1 to the last day of the corresponding month, both included.
-                
+
                 if (r.nextDouble() < probabilityOfRainingInADay) {
-                    
+
                     data[month][day] = 10 + p.nextInt( 100 );
                 }
             }
@@ -70,11 +70,15 @@ public class Rainfall
     public String toString()
     {
         StringBuffer sb = new StringBuffer();
+        // String s = "";
 
         for (int month = 1; month < data.length; month++) {
             for (int day = 1; day < data[month].length; day++) {
-                if (data[month][day] != 0) 
-                    sb.append(String.format("%04d-%02d-%02d  %8.2f\n", year, month, day, data[month][day]));
+                if (data[month][day] != 0) {
+                    String line = String.format("%04d-%02d-%02d  %8.2f\n", year, month, day, data[month][day]);
+                    sb.append(line);
+                    // s += line; // to get a zero in the exam, this is too computationally expensive
+                }
             }
         }
 
@@ -83,10 +87,11 @@ public class Rainfall
 
     public double [][] computeAverages()
     {
-        double [][] result = new double [data.length][2];        
+        double [][] result = new double [data.length][2];
 
         for (int month = 1; month < data.length; month++) {
             for (int day = 1; day < data[month].length; day++) {
+                //if (data[month][day] != null) -- useful for next 15 days
                 result[month][0] += data[month][day];
             }
             result[month][1] = result[month][0] / (data[month].length - 1);
@@ -131,7 +136,60 @@ public class Rainfall
         return max;
     }
 
+    public String findMeasurement(double value)
+    {
+        for (int month=1; month < data.length; month++) {
+            // inside a month we are going to use the search with sentinel
+            data[month][0] = value; // set the sentinel at first position
+            int day = data[month].length-1;
+            while (/*day >= 0 &&*/ data[month][day] != value) --day;
 
+            if (day > 0)
+                return String.format("%04d-%02d-%02d it rained exactly %.2f litres/m2.", year, month, day, value);
+        }
+        return String.format("No days it rained exactly %.2f litres/m2.", value);
+    }
+
+    public String dayItRainedBetween(double lowerBound, double upperBound)
+    {
+        for (int month=1; month < data.length; month++) {
+            // inside a month we are going to use the search with sentinel
+            data[month][0] = (lowerBound + upperBound) / 2; // set the sentinel at first position
+            int day = data[month].length-1;
+            while (/*day >= 0 &&*/ !(lowerBound <= data[month][day] && data[month][day] <= upperBound)) --day;
+
+            if (day > 0)
+                return String.format("%04d-%02d-%02d it rained >= %.2f and <= %.2f litres/m2.",
+                                    year, month, day, lowerBound, upperBound);
+        }
+        return String.format("No days it rained >= %.2f and <= %.2f litres/m2.", lowerBound, upperBound);
+    }
+    public String [] daysItRainedBetween(double lowerBound, double upperBound)
+    {
+        int counter = 0;
+        for (int month=1; month < data.length; month++) {
+            for (int day=1; day < data[month].length; day++) {
+                if (lowerBound <= data[month][day] && data[month][day] <= upperBound)
+                    ++counter;
+            }
+        }
+
+        String [] result = new String [Math.max(1, counter)];
+
+        counter = 0;
+
+        for (int month=1; month < data.length; month++) {
+            for (int day=1; day < data[month].length; day++) {
+                if (lowerBound <= data[month][day] && data[month][day] <= upperBound)
+                result[counter++] = String.format("%04d-%02d-%02d it rained %.2f litres/m2.", year, month, day, data[month][day] );
+            }
+        }
+
+        if (counter == 0)
+            result[0] = String.format("No days it rained >= %.2f and <= %.2f litres/m2.", lowerBound, upperBound);
+
+        return result;
+    }
 
     public static Rainfall loadFromFile( String filename )
         throws Exception // This is for ignoring the checked exceptions that can be thrown in this method.
@@ -169,7 +227,7 @@ public class Rainfall
         for (int month = 1; month < data.length; month++) {
             for (int day=1; day < data[month].length; day++) {
 
-                if ( data[month][day] > threshold ) {
+                if (data[month][day] > threshold) {
 
                     if (++counter == 1) {
                         starting_month = month;
