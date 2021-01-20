@@ -47,6 +47,14 @@ public class BulletinBoard
             }
             i++;
         }
+        /* alternative solution
+        for (int i = 0; i < bBoard.length && ! found; i++) {
+            if (bBoard[i] != null && link.equals(bBoard[i].getLink())) {
+                found = true;
+                result = bBoard[i];
+            }
+        }
+        */
         return result;
     }
 
