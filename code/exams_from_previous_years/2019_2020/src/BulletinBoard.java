@@ -33,7 +33,7 @@ public class BulletinBoard
 
     public PieceOfNews isPosted(String link)
     {
-        // search over an sparse array using the linear search
+        // search across a sparse array using the linear search
 
         PieceOfNews result = null;
         boolean found = false;

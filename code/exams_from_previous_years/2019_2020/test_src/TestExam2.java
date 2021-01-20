@@ -69,5 +69,46 @@ public class TestExam2
         } else {
             System.out.println("There are no audios in the bulletin board!");
         }
+
+        int [] v = {5, 2, 8, 3, 7, 4, 2, 7, 9, 4};
+        int rc = Exercises2and3.firstRepeatedElement(v);
+        if (rc == -1)
+            System.out.println("No repeated elements found!");
+        else
+            System.out.println("First repeated element is " + rc);
+
+        v[6] = 6;
+        v[7] = 0;
+        v[8] = 9;
+        v[9] = 1;
+        rc = Exercises2and3.firstRepeatedElement(v);
+        if (rc == -1)
+            System.out.println("No repeated elements found!");
+        else
+            System.out.println("First repeated element is " + rc);
+
+        double [][] cases = {   {10.0, 1.0e-3},
+                                {10.0, 1.0e-4},
+                                {10.0, 1.0e-5},
+                                {10.0, 1.0e-6},
+                                {10.0, 1.0e-12},
+                                {100.0, 1.0e-3},
+                                {100.0, 1.0e-4},
+                                {100.0, 1.0e-5},
+                                {100.0, 1.0e-6},
+                                {100.0, 1.0e-12},
+                                {1000.0, 1.0e-3},
+                                {1000.0, 1.0e-4},
+                                {1000.0, 1.0e-5},
+                                {1000.0, 1.0e-6},
+                                {1000.0, 1.0e-12}
+                            };
+        for (int i = 0; i < cases.length; ++i) {
+            double x = cases[i][0];
+            double e = cases[i][1];
+            int n = Exercises2and3.numTerms(x, e);
+
+            System.out.printf("%d terms are required to adjust the function for x = %.2f and epsilon = %e\n", n, x, e);
+        }
     }
 }

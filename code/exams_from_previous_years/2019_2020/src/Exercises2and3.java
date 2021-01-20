@@ -33,9 +33,9 @@ public class Exercises2and3
         return (found) ? v[i - 1] : -1;
 
         /* Alternative code
-        for (int i=0; i < v.length-1; i++) {
-            for (int j=i+1; j < v.length; j++) {
-                if ( v[i] == v[j] ) return v[i];
+        for (int i = 0; i < v.length-1; i++) {
+            for (int j = i+1; j < v.length; j++) {
+                if (v[i] == v[j]) return v[i];
             }
         }
         return -1;
@@ -47,14 +47,14 @@ public class Exercises2and3
     {
         if (x <= 0) return -1;
 
-        double cPrev = x;
-        double cActual = cPrev * 2;
-        int i = 2;
-        while (1 / (cActual - cPrev) > epsilon) {
-            i++;
-            cPrev = cActual;
-            cActual = cPrev * i;
+        double previousC = x; // C_1
+        double currentC = previousC * 2; // C_2 = C_1 * 2
+        int n = 2;
+        while (1 / (currentC - previousC) > epsilon) {
+            n++;
+            previousC = currentC;
+            currentC = currentC * n; // previousC * n
         }
-        return i;
+        return n;
     }
 }
