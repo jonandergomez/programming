@@ -9,10 +9,11 @@
 build/
 temp/
 
-# Java
-classes
+# Java and this repo
+classes/
 *.class
 docs/
+data/
 
 # Documentation
 docs/doxygen/*
