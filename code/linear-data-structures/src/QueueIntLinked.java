@@ -56,12 +56,12 @@ public class QueueIntLinked
      * <em>T(n) &isin; O(1)</em>
      *
      */
-    public void push( int value )
+    public void push(int value)
     {
-        if ( first == null ) {
-            first = last = new NodeInt( value );
+        if (first == null) {
+            first = last = new NodeInt(value);
         } else {
-            last.setNext( new NodeInt( value ) );
+            last.setNext(new NodeInt(value));
             last = last.getNext();
         }
         ++size;
@@ -77,8 +77,8 @@ public class QueueIntLinked
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         int temporary_value = first.getValue();
         first = first.getNext();
@@ -96,8 +96,8 @@ public class QueueIntLinked
     public int front()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         return first.getValue();
     }
@@ -111,20 +111,20 @@ public class QueueIntLinked
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof QueueIntLinked ) {
+        if (o instanceof QueueIntLinked) {
             QueueIntLinked other = (QueueIntLinked)o;
 
-            if ( this.size() == 0 && other.size() == 0 ) return true;
+            if (this.size() == 0 && other.size() == 0) return true;
 
-            if ( this.size() != other.size() ) return false;
+            if (this.size() != other.size()) return false;
 
             NodeInt a = this.first;
             NodeInt b = other.first;
 
-            while( a != null ) {
-                if ( a.getValue() != b.getValue() ) return false;
+            while (a != null) {
+                if (a.getValue() != b.getValue()) return false;
 
                 a = a.getNext();
                 b = b.getNext();
@@ -144,13 +144,13 @@ public class QueueIntLinked
     public String toString()
     {
         StringBuffer sb = new StringBuffer();
-        sb.append( "{" );
+        sb.append("{");
         NodeInt a = this.first;
-        while( a != null ) {
-            sb.append( " " + a.getValue() );
+        while (a != null) {
+            sb.append(" " + a.getValue());
             a = a.getNext();
         }
-        sb.append( " }" );
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -167,14 +167,14 @@ public class QueueIntLinked
         QueueIntLinked newQueue = new QueueIntLinked();
 
         try {
-            for( int i=0; i < size(); i++ ) {
-                newQueue.push( this.front() );
-                this.push( this.pop() );
+            for (int i = 0; i < size(); i++) {
+                newQueue.push(this.front());
+                this.push(this.pop());
             }
         }
-        catch( Exception e ) {
-            e.printStackTrace( System.err );
-            throw new Error( "Unexpected exception here!" );
+        catch(Exception e) {
+            e.printStackTrace(System.err);
+            throw new Error("Unexpected exception here!");
         }
 
         return newQueue;

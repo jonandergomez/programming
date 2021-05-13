@@ -55,10 +55,10 @@ public class StackIntLinked
      *
      * @throws Exception for indicating stack overflow is no space left on internal array.
      */
-    public void push( int value )
+    public void push(int value)
         throws Exception
     {
-        top = new NodeInt( value, top );
+        top = new NodeInt(value, top);
         ++size;
     }
 
@@ -72,8 +72,8 @@ public class StackIntLinked
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         int temporary_value = top.getValue();
         top = top.getNext();
@@ -91,8 +91,8 @@ public class StackIntLinked
     public int top()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         return top.getValue();
     }
@@ -106,17 +106,17 @@ public class StackIntLinked
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof StackIntLinked ) {
+        if (o instanceof StackIntLinked) {
             StackIntLinked other = (StackIntLinked)o;
 
             NodeInt a = this.top;
             NodeInt b = other.top;
 
-            while( a != null  ||  b != null ) {
-                if ( a == null || b == null ) return false;
-                if ( a.getValue() != b.getValue() ) return false;
+            while (a != null  ||  b != null) {
+                if (a == null || b == null) return false;
+                if (a.getValue() != b.getValue()) return false;
                 a = a.getNext();
                 b = b.getNext();
             }
@@ -136,14 +136,14 @@ public class StackIntLinked
     public String toString()
     {
         StringBuffer sb = new StringBuffer();
-        sb.append( "{" );
+        sb.append("{");
         // complete here
         NodeInt a = top;
-        while( a != null ) {
-            sb.append( " " + a.getValue() );
+        while (a != null) {
+            sb.append(" " + a.getValue());
             a = a.getNext();
         }
-        sb.append( " }" );
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -160,7 +160,7 @@ public class StackIntLinked
     {
         StackIntLinked newStack = new StackIntLinked();
 
-        clone( newStack );
+        clone(newStack);
 
         return newStack;
     }
@@ -168,23 +168,23 @@ public class StackIntLinked
      * Private method for cloning a stack tacking advantage of
      * the call stack of the system.
      */
-    private void clone( StackIntLinked newStack )
+    private void clone(StackIntLinked newStack)
     {
-        if ( ! this.isEmpty() ) {
+        if (! this.isEmpty()) {
             try {
                 // forward path of the recursive method
                 int value = this.pop();
 
                 // recursive call
-                clone( newStack );
+                clone(newStack);
 
                 // backward path of the recursive method
-                newStack.push( value );
-                this.push( value );
+                newStack.push(value);
+                this.push(value);
             }
-            catch( Exception e ) {
-                e.printStackTrace( System.err );
-                throw new Error( "Unexpected exception!" );
+            catch(Exception e) {
+                e.printStackTrace(System.err);
+                throw new Error("Unexpected exception!");
             }
         }
     }

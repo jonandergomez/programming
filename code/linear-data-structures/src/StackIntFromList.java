@@ -55,14 +55,14 @@ public class StackIntFromList
      *
      * @throws Exception for indicating stack overflow is no space left on internal array.
      */
-    public void push( int value )
+    public void push(int value)
         throws Exception
     {
-        if ( list.isEmpty() ) {
-            list.append( value );
+        if (list.isEmpty()) {
+            list.append(value);
         } else {
             list.begin(); // Sets the cursor pointing to the first element.
-            list.insert( value );
+            list.insert(value);
         }
     }
 
@@ -76,8 +76,8 @@ public class StackIntFromList
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         list.begin();
         int temporary_value = list.get();
@@ -96,8 +96,8 @@ public class StackIntFromList
     public int top()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         list.begin();
         return list.get();
@@ -112,22 +112,22 @@ public class StackIntFromList
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof StackIntFromList ) {
+        if (o instanceof StackIntFromList) {
             StackIntFromList other = (StackIntFromList)o;
 
-            if ( this.size() != other.size() ) return false;
+            if (this.size() != other.size()) return false;
 
             try {
                 boolean valid = this.list.begin() && other.list.begin();
-                while( valid ) {
-                    if ( this.list.get() != other.list.get() ) return false;
+                while (valid) {
+                    if (this.list.get() != other.list.get()) return false;
                     valid = this.list.next() && other.list.next();
                 }
                 return true;
             }
-            catch( Exception e ) {
+            catch (Exception e) {
                 return false;
             }
         }

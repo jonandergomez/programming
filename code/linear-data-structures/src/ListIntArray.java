@@ -3,13 +3,13 @@ package linear;
 import java.util.*;
 
 /**
- * Class for managing lists of integers by using an array as 
+ * Class for managing lists of integers by using an array as
  * internal representation.
  * Obviously, the implementation of this class is not efficient,
  * we did it for academic purposes. The goal is to illustrate
  * students how to do it, and why it is inefficient because of
  * data movements that can be avoided when using linked sequences.
- * Additionally, this implementation uses an interest point 
+ * Additionally, this implementation uses an interest point
  * instead of creating iterators, which are beyond the scope
  * of this semester.
  *
@@ -38,9 +38,9 @@ public class ListIntArray
      *
      * @param capacity Initial capacity of the list.
      */
-    public ListIntArray( int capacity )
+    public ListIntArray(int capacity)
     {
-        data = new int [ capacity ];
+        data = new int [capacity];
         size = 0;
         cursor = -1; // none element is the current element or interest point
     }
@@ -49,8 +49,8 @@ public class ListIntArray
     /**
      * Returns the number of integers stored in the list.
      * <em>T(n) &isin; O(1)</em>
-     * 
-     * 
+     *
+     *
      * @return integer indicating the size of the list.
      */
     public int size()
@@ -61,7 +61,7 @@ public class ListIntArray
     /**
      * Returns the number of integers stored in the list.
      * <em>T(n) &isin; O(1)</em>
-     * 
+     *
      * @return <code>true</code> if the list is empty, <code>false</code> otherwise.
      */
     public boolean isEmpty()
@@ -78,11 +78,11 @@ public class ListIntArray
     {
         int [] temp = new int [ data.length + 1000 ];
 
-        for( int i=0; i < size; i++ ) temp[i] = data[i];
+        for (int i = 0; i < size; i++) temp[i] = data[i];
 
         data = temp;
     }
-    
+
     /**
      * Appends a new integer after the last one in the list, if the list was
      * empty, then the new value is becomes both the first and the last.
@@ -91,9 +91,9 @@ public class ListIntArray
      * @param x integer value to be appended at the end of the list.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean append( int x )
+    public boolean append(int x)
     {
-        if ( size() == data.length ) augmentCapacity();
+        if (size() == data.length) augmentCapacity();
 
         data[size++] = x;
 
@@ -110,14 +110,14 @@ public class ListIntArray
      * @param x integer value to be inserted in the list at the current position of cursor.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean insert( int x )
+    public boolean insert(int x)
     {
-        if ( cursor < 0 || cursor >= size || isEmpty() )
+        if (cursor < 0 || cursor >= size || isEmpty())
             return append(x);
 
-        if ( size() == data.length ) augmentCapacity();
+        if (size() == data.length) augmentCapacity();
 
-        for( int i=size; i > 0 && i > cursor; i-- ) data[i] = data[i-1];
+        for (int i = size; i > 0 && i > cursor; i--) data[i] = data[i - 1];
 
         data[cursor] = x;
         ++size;
@@ -137,16 +137,16 @@ public class ListIntArray
     public boolean delete()
         throws Exception
     {
-        if ( cursor < 0 || cursor >= size )
-            throw new Exception( "No current element to be removed from the list!" );
+        if (cursor < 0 || cursor >= size)
+            throw new Exception("No current element to be removed from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be removed!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be removed!");
 
-        for( int i=cursor+1; i < size; i++ ) {
-            data[i-1] = data[i];
+        for (int i = cursor + 1; i < size; i++) {
+            data[i - 1] = data[i];
         }
-        if ( cursor == --size ) --cursor;
+        if (cursor == --size) --cursor;
 
         return true;
     }
@@ -161,11 +161,11 @@ public class ListIntArray
     public int get()
         throws Exception
     {
-        if ( cursor < 0 || cursor >= size )
-            throw new Exception( "No current element to be returned from the list!" );
+        if (cursor < 0 || cursor >= size)
+            throw new Exception("No current element to be returned from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be returned!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be returned!");
 
         return data[cursor];
     }
@@ -178,14 +178,14 @@ public class ListIntArray
      * @return <code>int</code> value stored at cursor position before replacing it.
      * @throws Exception if cursor is not referencing a valid element in the list or the list is empty.
      */
-    public int set( int x )
+    public int set(int x)
         throws Exception
     {
-        if ( cursor < 0 || cursor >= size )
-            throw new Exception( "No current element to be replaced from the list!" );
+        if (cursor < 0 || cursor >= size)
+            throw new Exception("No current element to be replaced from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be replaced!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be replaced!");
 
         int temp = data[cursor];
         data[cursor] = x;
@@ -201,7 +201,7 @@ public class ListIntArray
      */
     public boolean begin()
     {
-        if ( isEmpty() ) {
+        if (isEmpty()) {
             cursor = -1;
             return false;
         }
@@ -236,11 +236,11 @@ public class ListIntArray
      */
     public boolean end()
     {
-        if ( isEmpty() ) {
+        if (isEmpty()) {
             cursor = -1;
             return false;
         }
-        cursor = size-1;
+        cursor = size - 1;
         return true;
     }
 
@@ -253,14 +253,14 @@ public class ListIntArray
      * @param x the value to be found in the list.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean find( int x )
+    public boolean find(int x)
     {
         try {
-            for( boolean valid=begin(); valid; valid=next() ) {
-                if ( get() == x ) return true;
+            for (boolean valid = begin(); valid; valid = next()) {
+                if (get() == x) return true;
             }
         }
-        catch( Exception e ) 
+        catch (Exception e)
         {
             cursor = -1;
         }
@@ -270,7 +270,7 @@ public class ListIntArray
 
     /**
      * Inserts <code>x</code> in the corresponding position within the list in order
-     * to guarantee the list remains sorted in ascending order. 
+     * to guarantee the list remains sorted in ascending order.
      * This methods asumes the list was already sorted.
      * <em>T(n) &isin; O(n)</em>
      *
@@ -278,15 +278,15 @@ public class ListIntArray
      *          the list remains sorted in ascending order.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean insertInOrder( int x )
+    public boolean insertInOrder(int x)
     {
-        if ( isEmpty() ) return append(x);
+        if (isEmpty()) return append(x);
 
-        if ( size() == data.length ) augmentCapacity();
+        if (size() == data.length) augmentCapacity();
 
-        int i=size;
-        while( i > 0 && data[i-1] > x ) {
-            data[i] = data[i-1];
+        int i = size;
+        while (i > 0 && data[i - 1] > x) {
+            data[i] = data[i - 1];
             i--;
         }
         data[i] = x;
@@ -316,14 +316,14 @@ public class ListIntArray
      * @return <code>true</code> if <code>o</code> is a list and both lists have the same contents, <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof ListIntArray ) {
+        if (o instanceof ListIntArray) {
             ListIntArray other = (ListIntArray)o;
 
             boolean equal = this.size == other.size;
 
-            for( int i=0; i < this.size && equal; i++ )
+            for (int i = 0; i < this.size && equal; i++)
                 equal = this.data[i] == other.data[i];
 
             return equal;
@@ -333,7 +333,7 @@ public class ListIntArray
     }
 
     /**
-     * Returns a String representation of the current list. 
+     * Returns a String representation of the current list.
      * Use with care if the list is too large the resulting string could
      * block an important amount of memory.
      * <em>T(n) &isin; O(n)</em>
@@ -345,9 +345,9 @@ public class ListIntArray
     {
         StringBuffer sb = new StringBuffer();
 
-        sb.append( "{" );
-        for( int i=0; i < size; i++ ) sb.append( " " + this.data[i] );
-        sb.append( " }" );
+        sb.append("{");
+        for (int i = 0; i < size; i++) sb.append(" " + this.data[i]);
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -361,9 +361,9 @@ public class ListIntArray
     @Override
     public ListIntArray clone()
     {
-        ListIntArray l = new ListIntArray( this.data.length );
+        ListIntArray l = new ListIntArray(this.data.length);
 
-        for( int i=0; i < this.size; i++ ) l.data[i] = this.data[i];
+        for (int i = 0; i < this.size; i++) l.data[i] = this.data[i];
 
         l.size = this.size;
 

@@ -29,7 +29,7 @@ public class StackIntArray
      *
      * @param size Capacity of the internal array.
      */
-    public StackIntArray( int size )
+    public StackIntArray(int size)
     {
         data = new int [size];
         top = -1;
@@ -45,7 +45,7 @@ public class StackIntArray
      */
     public int size()
     {
-        return top+1;
+        return top + 1;
     }
 
     /**
@@ -65,11 +65,11 @@ public class StackIntArray
      *
      * @throws Exception for indicating stack overflow is no space left on internal array.
      */
-    public void push( int value )
+    public void push(int value)
         throws Exception
     {
-        if ( size() == data.length )
-            throw new Exception( "Stack Overflow" );
+        if (size() == data.length)
+            throw new Exception("Stack Overflow");
 
         data[++top] = value;
     }
@@ -84,8 +84,8 @@ public class StackIntArray
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         return data[top--];
     }
@@ -100,8 +100,8 @@ public class StackIntArray
     public int top()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Stack Underflow" );
+        if (size() == 0)
+            throw new Exception("Stack Underflow");
 
         return data[top];
     }
@@ -115,15 +115,15 @@ public class StackIntArray
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof StackIntArray ) {
+        if (o instanceof StackIntArray) {
             StackIntArray other = (StackIntArray)o;
 
-            if ( this.size() != other.size() ) return false;
+            if (this.size() != other.size()) return false;
 
-            for( int i=top; i >= 0; i-- )
-                if ( this.data[i] != other.data[i] ) return false;
+            for (int i = top; i >= 0; i--)
+                if (this.data[i] != other.data[i]) return false;
 
             return true;
         }
@@ -140,10 +140,10 @@ public class StackIntArray
     public String toString()
     {
         StringBuffer sb = new StringBuffer();
-        sb.append( "{" );
-        for( int i=top; i >= 0; i-- )
-            sb.append( " " + data[i] );
-        sb.append( " }" );
+        sb.append("{");
+        for (int i = top; i >= 0; i--)
+            sb.append(" " + data[i]);
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -157,10 +157,10 @@ public class StackIntArray
     @Override
     public StackIntArray clone()
     {
-        StackIntArray newStack = new StackIntArray( data.length );
+        StackIntArray newStack = new StackIntArray(data.length);
 
         newStack.top = this.top;
-        for( int i=top; i >= 0; i-- )
+        for (int i = top; i >= 0; i--)
             newStack.data[i] = this.data[i];
 
         return newStack;

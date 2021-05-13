@@ -36,7 +36,7 @@ public class QueueIntArray
      *
      * @param size Capacity of the internal array.
      */
-    public QueueIntArray( int size )
+    public QueueIntArray(int size)
     {
         buffer = new int [size];
         first = 0;
@@ -53,7 +53,7 @@ public class QueueIntArray
      */
     public int size()
     {
-        return (last-first+1+buffer.length) % buffer.length;
+        return (last - first + 1 + buffer.length) % buffer.length;
     }
 
     /**
@@ -73,16 +73,16 @@ public class QueueIntArray
      *
      * @throws Exception for indicating queue overflow is no space left on internal array.
      */
-    public void push( int value )
+    public void push(int value)
         throws Exception
     {
         // maximum size is buffer.length-1 because it could happen that
         // (last+1)%buffer.length == first, whose meaning is that the queue
         // is empty. This is the limitation of using modular arithmetics.
-        if ( size() == buffer.length-1 )
-            throw new Exception( "Queue Overflow" );
+        if (size() == buffer.length - 1)
+            throw new Exception("Queue Overflow");
 
-        last = (last+1) % buffer.length;
+        last = (last + 1) % buffer.length;
         buffer[last] = value;
     }
 
@@ -96,11 +96,11 @@ public class QueueIntArray
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         int temporary_value = buffer[first];
-        first = (first+1) % buffer.length;
+        first = (first + 1) % buffer.length;
         return temporary_value;
     }
 
@@ -114,8 +114,8 @@ public class QueueIntArray
     public int front()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         return buffer[first];
     }
@@ -129,30 +129,30 @@ public class QueueIntArray
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof QueueIntArray ) {
+        if (o instanceof QueueIntArray) {
             QueueIntArray other = (QueueIntArray)o;
 
-            if ( this.size() == 0 && other.size() == 0 ) return true;
+            if (this.size() == 0 && other.size() == 0) return true;
 
-            if ( this.size() != other.size() ) return false;
+            if (this.size() != other.size()) return false;
 
             try {
                 boolean are_equal=true;
-                for( int i=0; i < this.size(); i++ ) {
+                for (int i = 0; i < this.size(); i++) {
 
                     are_equal = are_equal && (this.front() == other.front());
 
-                    this.push(  this.pop() );
-                    other.push( other.pop() );
+                    this.push(this.pop());
+                    other.push(other.pop());
                 }
 
                 return are_equal;
             }
-            catch( Exception e ) {
-                e.printStackTrace( System.err );
-                throw new Error( "Unexpected exception here!" );
+            catch (Exception e) {
+                e.printStackTrace(System.err);
+                throw new Error("Unexpected exception here!");
             }
         }
         return false;
@@ -168,18 +168,18 @@ public class QueueIntArray
     public String toString()
     {
         StringBuffer sb = new StringBuffer();
-        sb.append( "{" );
+        sb.append("{");
         try {
-            for( int i=0; i < size(); i++ ) {
-                sb.append( " " + this.front() );
-                this.push( this.pop() );
+            for (int i = 0; i < size(); i++) {
+                sb.append(" " + this.front());
+                this.push(this.pop());
             }
         }
-        catch( Exception e ) {
-            e.printStackTrace( System.err );
-            throw new Error( "Unexpected exception here!" );
+        catch (Exception e) {
+            e.printStackTrace(System.err);
+            throw new Error("Unexpected exception here!");
         }
-        sb.append( " }" );
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -190,20 +190,20 @@ public class QueueIntArray
      *
      * @return QueueIntArray with the same contents of the current queue.
      */
-    @Override 
+    @Override
     public QueueIntArray clone()
     {
-        QueueIntArray newQueue = new QueueIntArray( buffer.length );
+        QueueIntArray newQueue = new QueueIntArray(buffer.length);
 
         try {
-            for( int i=0; i < size(); i++ ) {
-                newQueue.push( this.front() );
-                this.push( this.pop() );
+            for (int i = 0; i < size(); i++) {
+                newQueue.push(this.front());
+                this.push(this.pop());
             }
         }
-        catch( Exception e ) {
-            e.printStackTrace( System.err );
-            throw new Error( "Unexpected exception here!" );
+        catch (Exception e) {
+            e.printStackTrace(System.err);
+            throw new Error("Unexpected exception here!");
         }
 
         return newQueue;

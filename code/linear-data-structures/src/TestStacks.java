@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class TestStacks
 {
-    public static void main( String [] args )
+    public static void main(String [] args)
         throws Exception
     {
         Random r = new Random();
@@ -18,16 +18,16 @@ public class TestStacks
         StackIntArray  sa = new StackIntArray();
         StackIntLinked sl = new StackIntLinked();
 
-        for( int i=0; i < 10; i++ ) {
-            int value = r.nextInt( 100 );
+        for (int i = 0; i < 10; i++) {
+            int value = r.nextInt(100);
             sa.push(value);
             sl.push(value);
         }
 
         System.out.println("\n");
 
-        System.out.println( sa );
-        System.out.println( sl );
+        System.out.println(sa);
+        System.out.println(sl);
 
         System.out.println("\n");
 
@@ -39,8 +39,8 @@ public class TestStacks
 
         System.out.println("\n");
 
-        System.out.printf( "sa and sa2 %s equal\n", sa.equals(sa2) ? "are" : "are not" );
-        System.out.printf( "sl and sl2 %s equal\n", sl.equals(sl2) ? "are" : "are not" );
+        System.out.printf("sa and sa2 %s equal\n", sa.equals(sa2) ? "are" : "are not");
+        System.out.printf("sl and sl2 %s equal\n", sl.equals(sl2) ? "are" : "are not");
 
         System.out.println("\n");
     }

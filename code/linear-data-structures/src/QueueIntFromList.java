@@ -53,7 +53,7 @@ public class QueueIntFromList
      * <em>T(n) &isin; O(1)</em>
      *
      */
-    public void push( int value )
+    public void push(int value)
     {
         list.append(value);
     }
@@ -68,8 +68,8 @@ public class QueueIntFromList
     public int pop()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         list.begin();
         int temporary_value = list.get();
@@ -88,8 +88,8 @@ public class QueueIntFromList
     public int front()
         throws Exception
     {
-        if ( size() == 0 )
-            throw new Exception( "Queue Underflow" );
+        if (size() == 0)
+            throw new Exception("Queue Underflow");
 
         list.begin();
         return list.get();
@@ -104,22 +104,22 @@ public class QueueIntFromList
                <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof QueueIntFromList ) {
+        if (o instanceof QueueIntFromList) {
 
             QueueIntFromList other = (QueueIntFromList)o;
 
             try {
                 boolean valid = this.list.size() == other.list.size();
                 valid = valid && this.list.begin() && other.list.begin();
-                while( valid ) {
-                    if ( this.list.get() != other.list.get() ) return false;
+                while (valid) {
+                    if (this.list.get() != other.list.get()) return false;
                     valid = this.list.next() && other.list.next();
                 }
                 return true;
             }
-            catch( Exception e ) {
+            catch (Exception e) {
                 return false;
             }
 

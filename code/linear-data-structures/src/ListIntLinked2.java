@@ -64,15 +64,15 @@ public class ListIntLinked2
      * @param x integer value to be appended at the end of the list.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean append( int x )
+    public boolean append(int x)
     {
-        NodeInt node = new NodeInt( x );
+        NodeInt node = new NodeInt(x);
 
-        if ( size() == 0 ) {
+        if (size() == 0) {
             first = last = cursor = node; // trivial
         } else {
-            last.setNext( node ); // (1) connects the last node with the new one such that the new node is the next of the last one
-            node.setPrevious( last ); // (2) connects the new node with the last one such that the last node is the previous of the new one
+            last.setNext(node); // (1) connects the last node with the new one such that the new node is the next of the last one
+            node.setPrevious(last); // (2) connects the new node with the last one such that the last node is the previous of the new one
             last = node; // (3) updates 'last' attribute to reference the last node in the list
         }
 
@@ -91,27 +91,27 @@ public class ListIntLinked2
      * @param x integer value to be inserted in the list at the current position of cursor.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean insert( int x )
+    public boolean insert(int x)
     {
-        if ( cursor == null || isEmpty() ) return append(x);
+        if (cursor == null || isEmpty()) return append(x);
 
-        NodeInt node = new NodeInt( x );
+        NodeInt node = new NodeInt(x);
 
-        if ( cursor == first ) {
+        if (cursor == first) {
 
-            node.setNext( first ); // (1) connects the first node so far to be the next of the new one
-            first.setPrevious( node ); // (2) connects the new one to be previous of the first one so far
+            node.setNext(first); // (1) connects the first node so far to be the next of the new one
+            first.setPrevious(node); // (2) connects the new one to be previous of the first one so far
             first = node; // (3) updates 'first' attribute to reference the new node as the first of the list
 
         } else {
 
             NodeInt previous = cursor.getPrevious();
 
-            node.setPrevious( previous ); // (1) connects the new node with the previous of the cursor
-            node.setNext( cursor ); // (2) connects the new node with the cursor
+            node.setPrevious(previous); // (1) connects the new node with the previous of the cursor
+            node.setNext(cursor); // (2) connects the new node with the cursor
 
-            previous.setNext( node ); // (3) connects the previous of the cursor to have as next the new node
-            cursor.setPrevious( node ); // (4) connects the cursor to have as previous the new node
+            previous.setNext(node); // (3) connects the previous of the cursor to have as next the new node
+            cursor.setPrevious(node); // (4) connects the cursor to have as previous the new node
         }
         // cursor = node; // updates 'cursor' attribute to reference the new inserted node
 
@@ -132,24 +132,24 @@ public class ListIntLinked2
     public boolean delete()
         throws Exception
     {
-        if ( cursor == null )
-            throw new Exception( "No current element to be removed from the list!" );
+        if (cursor == null)
+            throw new Exception("No current element to be removed from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be removed!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be removed!");
 
-        if ( size == 1 ) {
+        if (size == 1) {
 
             first = last = cursor = null;
 
-        } else if ( cursor == first ) {
+        } else if (cursor == first) {
 
             first = first.getNext(); // (a.1)
             first.setPrevious(null); // (a.2)
 
             cursor = first; // (a.3)
 
-        } else if ( cursor == last ) {
+        } else if (cursor == last) {
 
             last = last.getPrevious(); // (b.1)
             last.setNext(null); // (b.2)
@@ -161,8 +161,8 @@ public class ListIntLinked2
             NodeInt previous = cursor.getPrevious();
             NodeInt     next = cursor.getNext();
 
-            previous.setNext( next ); // (c.1)
-            next.setPrevious( previous ); // (c.2)
+            previous.setNext(next); // (c.1)
+            next.setPrevious(previous); // (c.2)
 
             cursor = next; // (c.3)
         }
@@ -182,11 +182,11 @@ public class ListIntLinked2
     public int get()
         throws Exception
     {
-        if ( cursor == null )
-            throw new Exception( "No current element to be returned from the list!" );
+        if (cursor == null)
+            throw new Exception("No current element to be returned from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be returned!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be returned!");
 
         return cursor.getValue();
     }
@@ -199,17 +199,17 @@ public class ListIntLinked2
      * @return <code>int</code> value stored at cursor position before replacing it.
      * @throws Exception if cursor is not referencing a valid element in the list or the list is empty.
      */
-    public int set( int x )
+    public int set(int x)
         throws Exception
     {
-        if ( cursor == null )
-            throw new Exception( "No current element to be replaced from the list!" );
+        if (cursor == null)
+            throw new Exception("No current element to be replaced from the list!");
 
-        if ( isEmpty() )
-            throw new Exception( "Empty list! No elements can be replaced!" );
+        if (isEmpty())
+            throw new Exception("Empty list! No elements can be replaced!");
 
         int temp = cursor.getValue();
-        cursor.setValue( x );
+        cursor.setValue(x);
 
         return temp;
     }
@@ -234,7 +234,7 @@ public class ListIntLinked2
      */
     public boolean next()
     {
-        if ( cursor != null )
+        if (cursor != null)
             cursor = cursor.getNext();
 
         return cursor != null;
@@ -247,7 +247,7 @@ public class ListIntLinked2
      */
     public boolean previous()
     {
-        if ( cursor != null )
+        if (cursor != null)
             cursor = cursor.getPrevious();
 
         return cursor != null;
@@ -274,14 +274,14 @@ public class ListIntLinked2
      * @param x the value to be found in the list.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean find( int x )
+    public boolean find(int x)
     {
         try {
-            for( boolean valid=begin(); valid; valid=next() ) {
-                if ( get() == x ) return true;
+            for (boolean valid = begin(); valid; valid = next()) {
+                if (get() == x) return true;
             }
         }
-        catch( Exception e )
+        catch (Exception e)
         {
             cursor = null;
         }
@@ -299,23 +299,23 @@ public class ListIntLinked2
      *          the list remains sorted in ascending order.
      * @return <code>true</code> if the operation was successful, <code>false</code> otherwise.
      */
-    public boolean insertInOrder( int x )
+    public boolean insertInOrder(int x)
     {
-        if ( isEmpty() || x > last.getValue() ) {
+        if (isEmpty() || x > last.getValue()) {
 
             return append(x);
 
-        } else if ( x < first.getValue() ) {
+        } else if (x < first.getValue()) {
 
             begin();
 
         } else {
 
             cursor = last;
-            while( cursor != null  &&  cursor.getValue() > x ) {
+            while (cursor != null  &&  cursor.getValue() > x) {
                 cursor = cursor.getPrevious();
             }
-            if ( cursor != null ) cursor = cursor.getNext(); // needs to be corrected because the while loop ends when a value <= x has been found
+            if (cursor != null) cursor = cursor.getNext(); // needs to be corrected because the while loop ends when a value <= x has been found
 
         }
 
@@ -341,9 +341,9 @@ public class ListIntLinked2
      * @return <code>true</code> if <code>o</code> is a list and both lists have the same contents, <code>false</code> otherwise.
      */
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof ListIntLinked2 ) {
+        if (o instanceof ListIntLinked2) {
             ListIntLinked2 other = (ListIntLinked2)o;
 
             boolean equal = this.size == other.size;
@@ -351,8 +351,8 @@ public class ListIntLinked2
             NodeInt a = this.first;
             NodeInt b = other.first;
 
-            for( int i=0; i < this.size && equal; i++ )
-                equal = a.getValue() == b.getValue() && !( a == this.cursor ^ b == other.cursor);
+            for (int i = 0; i < this.size && equal; i++)
+                equal = a.getValue() == b.getValue() && ! (a == this.cursor ^ b == other.cursor);
 
             return equal;
         }
@@ -373,9 +373,9 @@ public class ListIntLinked2
     {
         StringBuffer sb = new StringBuffer();
 
-        sb.append( "{" );
-        for( NodeInt a = first; a != null; a = a.getNext() ) sb.append( " " + a.getValue() );
-        sb.append( " }" );
+        sb.append("{");
+        for (NodeInt a = first; a != null; a = a.getNext()) sb.append(" " + a.getValue());
+        sb.append(" }");
 
         return sb.toString();
     }
@@ -391,7 +391,7 @@ public class ListIntLinked2
     {
         ListIntLinked2 l = new ListIntLinked2();
 
-        for( NodeInt a = first; a != null; a = a.getNext() ) l.append( a.getValue() );
+        for (NodeInt a = first; a != null; a = a.getNext()) l.append(a.getValue());
 
         l.cursor = null;
 
@@ -404,13 +404,13 @@ public class ListIntLinked2
      */
     public void sort()
     {
-        if ( size() > 1 ) {
+        if (size() > 1) {
 
             ListIntLinked2  left = new ListIntLinked2();
             ListIntLinked2 right = new ListIntLinked2();
 
             NodeInt node = this.first;
-            for( int i=0; i < size/2; i++ ) node = node.getNext();
+            for (int i = 0; i < size / 2; i++) node = node.getNext();
 
             left.first = this.first;
             left.last = node.getPrevious();
@@ -428,23 +428,23 @@ public class ListIntLinked2
              left.sort();
             right.sort();
 
-            if ( left.last.getValue() <= right.first.getValue() ) {
+            if (left.last.getValue() <= right.first.getValue()) {
 
-                left.last.setNext( right.first );
-                right.first.setPrevious( left.last );
+                left.last.setNext(right.first);
+                right.first.setPrevious(left.last);
                 this.first = left.first;
                 this.last = right.last;
                 this.size = left.size + right.size;
 
             } else {
-                naturalMerge( this, left, right );
+                naturalMerge(this, left, right);
             }
 
              left.clear();
             right.clear();
         }
     }
-    private static void naturalMerge( ListIntLinked2 target, ListIntLinked2 left, ListIntLinked2 right )
+    private static void naturalMerge(ListIntLinked2 target, ListIntLinked2 left, ListIntLinked2 right)
     {
         target.clear();
 
@@ -453,11 +453,11 @@ public class ListIntLinked2
 
         target.size = left.size + right.size;
 
-        while( a != null || b != null ) {
+        while (a != null || b != null) {
 
-            if ( b == null || ( a != null && a.getValue() <= b.getValue() ) ) {
+            if (b == null || (a != null && a.getValue() <= b.getValue())) {
 
-                if ( target.first == null ) {
+                if (target.first == null) {
                     target.first = target.last = a;
                 } else {
                     target.last.setNext(a);
@@ -470,7 +470,7 @@ public class ListIntLinked2
 
             } else {
 
-                if ( target.first == null ) {
+                if (target.first == null) {
                     target.first = target.last = b;
                 } else {
                     target.last.setNext(b);
@@ -530,11 +530,11 @@ public class ListIntLinked2
             int index = 0;
 
             @Override
-            public void add( Integer x )
+            public void add(Integer x)
             {
                 NodeInt saved_cursor = theList.cursor;
                 theList.cursor = cursor;
-                theList.insert( x );
+                theList.insert(x);
                 theList.cursor = saved_cursor;
             }
 
@@ -581,25 +581,25 @@ public class ListIntLinked2
             @Override
             public void remove()
             {
-                if ( cursor == null ) throw new NoSuchElementException();
+                if (cursor == null) throw new NoSuchElementException();
 
                 try {
                     NodeInt saved_cursor = theList.cursor;
                     theList.cursor = cursor;
                     theList.delete();
                     cursor = theList.cursor;
-                    if ( saved_cursor != cursor ) {
+                    if (saved_cursor != cursor) {
                         theList.cursor = saved_cursor;
                     }
                 }
-                catch( Exception e )
+                catch (Exception e)
                 {
-                    e.printStackTrace( System.err );
+                    e.printStackTrace(System.err);
                 }
             }
 
             @Override
-            public void set( Integer x )
+            public void set(Integer x)
             {
                 cursor.setValue(x);
             }
@@ -608,33 +608,33 @@ public class ListIntLinked2
         return it;
     }
 
-    public static void main( String [] args )
+    public static void main(String [] args)
     {
         Random r = new Random();
 
         ListIntLinked2 l = new ListIntLinked2();
 
-        for( int i=0; i < 10; i++ ) l.insertInOrder( r.nextInt( 100 ) );
+        for (int i = 0; i < 10; i++) l.insertInOrder(r.nextInt(100));
 
-        //System.out.println( l + "\n" );
+        //System.out.println(l + "\n");
         printList(l);
 
         Iterator it = l.iterator();
 
         printList(l);
-        while( it.hasNext() ) {
+        while (it.hasNext()) {
             it.remove();
             it.next();
             printList(l);
         }
     }
-    private static void printList( ListIntLinked2 l )
+    private static void printList(ListIntLinked2 l)
     {
         // We have to use Object because ListIntLinked2 is not a generic class from which
         // the data type can be deduced by the compiler at compile time.
         //
-        for( Object x : l )
-            System.out.printf( " %d", x );
+        for (Object x : l)
+            System.out.printf(" %d", x);
 
         System.out.println();
     }
