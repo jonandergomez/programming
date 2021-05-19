@@ -165,4 +165,41 @@ public class StackIntArray
 
         return newStack;
     }
+
+    public boolean isContained_iterative(int x)
+    {
+        for (int i = top; i >= 0; i--)
+           if (this.data[i] == x) return true;
+
+        return false;
+    }
+    public boolean isContained_recursive(int x)
+    {
+        if (this.isEmpty()) {
+            return false;
+        } else if (this.top() == x) {
+            return true;
+        } else {
+            int temp = this.pop();
+            boolean b = this.isContained_recursive(x);
+            this.push(temp);
+            return b;
+        }
+    }
+    public boolean isContained_2(int x)
+    {
+        StackIntArray temp = new StackIntArray(this.size() + 1);
+
+        boolean xWasIn = false;
+
+        while (!this.isEmpty()  &&  !xWasIn) {
+            int v = this.pop();
+            xWasIn = (v == x);
+            temp.push(v);
+        }
+        while (!temp.isEmpty()) {
+            this.push(temp.pop());
+        }
+        return xWasIn;
+    }
 }
