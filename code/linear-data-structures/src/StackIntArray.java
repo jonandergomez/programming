@@ -175,15 +175,24 @@ public class StackIntArray
     }
     public boolean isContained_recursive(int x)
     {
-        if (this.isEmpty()) {
+        try {
+            if (this.isEmpty()) {
+                return false;
+            } else if (this.top() == x) {
+                return true;
+            } else {
+                int temp = this.pop();
+                boolean b = this.isContained_recursive(x);
+                this.push(temp);
+                return b;
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace(System.err);
+            System.exit(1);
+        }
+        finally {
             return false;
-        } else if (this.top() == x) {
-            return true;
-        } else {
-            int temp = this.pop();
-            boolean b = this.isContained_recursive(x);
-            this.push(temp);
-            return b;
         }
     }
     public boolean isContained_2(int x)
@@ -192,14 +201,22 @@ public class StackIntArray
 
         boolean xWasIn = false;
 
-        while (!this.isEmpty()  &&  !xWasIn) {
-            int v = this.pop();
-            xWasIn = (v == x);
-            temp.push(v);
+        try {
+            while (!this.isEmpty()  &&  !xWasIn) {
+                int v = this.pop();
+                xWasIn = (v == x);
+                temp.push(v);
+            }
+            while (!temp.isEmpty()) {
+                this.push(temp.pop());
+            }
         }
-        while (!temp.isEmpty()) {
-            this.push(temp.pop());
+        catch(Exception e) {
+            e.printStackTrace(System.err);
+            System.exit(1);
         }
-        return xWasIn;
+        finally {
+            return xWasIn;
+        }
     }
 }

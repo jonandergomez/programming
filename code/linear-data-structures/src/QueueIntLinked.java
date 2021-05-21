@@ -172,7 +172,7 @@ public class QueueIntLinked
                 this.push(this.pop());
             }
         }
-        catch(Exception e) {
+        catch (Exception e) {
             e.printStackTrace(System.err);
             throw new Error("Unexpected exception here!");
         }

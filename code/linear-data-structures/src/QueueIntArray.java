@@ -157,6 +157,36 @@ public class QueueIntArray
         }
         return false;
     }
+    public boolean equals_2(Object o)
+    {
+        if (o instanceof QueueIntArray) {
+            QueueIntArray other = (QueueIntArray)o;
+
+            if (this.size() == 0 && other.size() == 0) return true;
+
+            if (this.size() != other.size()) return false;
+
+            try {
+                boolean are_equal=true;
+                int i1 = this.first;
+                int i2 = other.first;
+                for (int i = 0; i < this.size() && are_equal; i++) {
+
+                    are_equal = are_equal && (this.buffer[i1] == other.buffer[i2]);
+
+                    i1 = (i1 + 1) % this.buffer.length;
+                    i2 = (i2 + 1) % other.buffer.length;
+                }
+
+                return are_equal;
+            }
+            catch (Exception e) {
+                e.printStackTrace(System.err);
+                throw new Error("Unexpected exception here!");
+            }
+        }
+        return false;
+    }
 
     /**
      * Returns an string as the representation of the current queue.
