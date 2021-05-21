@@ -238,4 +238,18 @@ public class QueueIntArray
 
         return newQueue;
     }
+
+
+    public boolean isContained(int x)
+    {
+        boolean wasFound = false;
+
+        for (int i = 0; i < this.size(); i++) {
+            
+            wasFound = wasFound || (this.front() == x);
+
+            this.push(this.pop());
+        }
+       return wasFound;
+    }
 }
