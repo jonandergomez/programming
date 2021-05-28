@@ -25,6 +25,36 @@ public class StackIntLinked
         top = null;
     }
 
+    /**
+     * Creates an stack as a copy of the stack given as parameter.
+     */
+    public StackIntLinked(StackIntLinked s)
+    {
+        /* this initialization is not a copy, this must never be used
+        this.size = s.size;
+        this.top = s.top;
+        */
+
+        this();
+
+        NodeInt temp = null;
+
+        while (s.top != null) {
+            temp = new NodeInt(s.top.getValue(), temp);
+            s.top = s.top.getNext();
+            s.size--;
+        }
+
+        while (temp != null) {
+            s.top = new NodeInt(temp.getValue(), s.top);
+            s.size++;
+            this.top = new NodeInt(temp.getValue(), this.top);
+            this.size++;
+            temp = temp.getNext();
+        }
+    }
+
+
     // Methods
 
     /**
@@ -187,5 +217,85 @@ public class StackIntLinked
                 throw new Error("Unexpected exception!");
             }
         }
+    }
+
+    // from exam of academic year 2019/2020
+    public static StackIntLinked removeGreaterThan(StackIntLinked s, int x)
+    {
+        StackIntLinked temp = new StackIntLinked();
+        StackIntLinked output = new StackIntLinked();
+
+        // all the elements in 's' are moved to 'temp'
+        while (! s.isEmpty()) temp.push(s.pop());
+
+        // elements in 'temp' are extracted and distributed
+        while (! temp.isEmpty()) {
+            if (temp.top() <= x) // lower than or equal to 'x' in 's'
+                s.push(temp.pop());
+            else // greater than 'x' in 'output'
+                output.push(temp.pop());
+        }
+        // 'output' is returned with the removed elements
+        return output;
+    }
+
+    // from an exam of academic year 2019/2020
+    public int removeLessThanInOrd(int x)
+    {
+        int counter = 0;
+
+        while (top != null && top.getValue() < x) {
+            top = top.getNext();
+            --size;
+            ++counter;
+        }
+
+        return counter;
+    }
+    public int removeLessThan(int x)
+    {
+        int counter = 0;
+
+        NodeInt temp = null;
+
+        while (top != null) {
+            temp = new NodeInt(top.getValue(), temp);
+            top = top.getNext();
+            --size;
+        }
+
+        while (temp != null) {
+            if (temp.getValue() >= x) {
+                top = new NodeInt(temp.getValue(), top);
+                ++size;
+            } else {
+                ++counter;
+            }
+            temp = temp.getNext();
+        }
+
+        return counter;
+    }
+    public int removeLessThan_v2(int x)
+    {
+        int [] temp = new int [this.size];
+
+        for (int i = 0; i < this.size /* this.top != null */; i++) {
+            temp[i] = this.top.getValue();
+            this.top = this.top.getNext();
+        }
+
+        // in this case the elements are restored into the
+        // stack in the reverse order they were previously
+        this.size = 0;
+        for (int i = 0; i < temp.length; i++) {
+        // for (int i = temp.length -1; i >= 0; i--) // to leave the elements in the same order
+            if (temp[i] >= x) {
+                this.top = new NodeInt(temp[i], this.top);
+                ++this.size;
+            }
+        }
+
+        return temp.length - this.size;
     }
 }
