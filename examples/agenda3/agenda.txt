@@ -1,0 +1,73 @@
+10
+Adderley
+Cannonball
+cannonball@bluenote.com
+123456789
+1928 09 15
+Armstrong
+Louis
+louis@bluenote.com
+123456789
+1901 08 04
+Chambers
+Paul L.D.
+chambers@bluenote.com
+123456789
+1935 04 22
+Coltrane
+John
+john.coltrane@bluenote.com
+123456789
+1926 09 23
+Davis
+Miles
+miles.davis@bluenote.com
+123456789
+1926 05 28
+Ellington
+Edward Kennedy
+duke@bluenote.com
+123456789
+1899 04 29
+Evans
+Willian John
+bill.evans@bluenote.com
+123456789
+1929 08 16
+Monk
+Thelonious S.
+t.s.monk@bluenote.com
+123456789
+1917 10 10
+Parker
+Charlie Christopher
+bird@bluenote.com
+123456789
+1920 08 29
+Pettiford
+Oscar
+pettiford@bluenote.com
+123456789
+1922 09 30
+####
+4
+Jazz concert
+Jimmy Glass
+2019-10-11 22:00:00
+2019-10-11 23:59:59
+67
+Jazz concert
+Jimmy Glass
+2019-12-04 22:00:00
+2019-12-04 23:59:59
+43
+Jazz concert
+Jimmy Glass
+2021-02-14 20:00:00
+2021-02-14 22:00:00
+1
+Reopening Jazz Concert
+Jimmy Glass
+2021-06-10 20:00:00
+2021-06-10 23:00:00
+1
