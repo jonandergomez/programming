@@ -190,12 +190,13 @@ public class Agenda
                 firstEvent = firstEvent.getNext();
                 if (firstEvent != null)
                     firstEvent.setPrevious(null);
+                else
+                    lastEvent = null;
 
             } else if (ne == lastEvent) {
 
                 lastEvent = lastEvent.getPrevious();
-                if (lastEvent != null)
-                    lastEvent.setNext(null);
+                lastEvent.setNext(null);
 
             } else {
 
