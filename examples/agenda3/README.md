@@ -18,9 +18,9 @@ of an event from two timestamps.
 * [**Contact**](src/Contact.java) is a class for representing a single contact we can have in our agendas, with the common attributes we need for each person we are in touch.
 * [**Agenda**](src/Contact.java) is a class for representing an agenda with contacts and events.
 
-In order to illustrate the use of packages, the above ***data*** classes will be included in a package named **etsinf.prg.agenda2**.
+In order to illustrate the use of packages, the above ***data*** classes will be included in a package named **etsinf.prg.agenda3**.
 The main program for testing these classes will be outside the package, in the class
-[**TestingAgenda2**](test_src/TestingAgenda2.java),
+[**TestingAgenda3**](test_src/TestingAgenda3.java),
 hence you will have the opportunity of seeing an example of how to import a package not provided by the JDK.
 
 Additionally, the package will be integrated in a JAR file, and it will be provided the example of how

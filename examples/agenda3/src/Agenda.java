@@ -101,7 +101,7 @@ public class Agenda
 
         } else {
             NodeContact nc = firstContact;
-            while (nc != null && c.compareTo(nc.getContact()) < 0) {
+            while (nc != null && c.compareTo(nc.getContact()) >= 0) {
                 nc = nc.getNext();
             }
 
@@ -158,12 +158,13 @@ public class Agenda
                 firstContact = firstContact.getNext();
                 if (firstContact != null)
                     firstContact.setPrevious(null);
+                else
+                    lastContact = null;
 
             } else if (nc == lastContact) {
 
                 lastContact = lastContact.getPrevious();
-                if (lastContact != null)
-                    lastContact.setNext(null);
+                lastContact.setNext(null);
 
             } else {
 
