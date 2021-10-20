@@ -11,7 +11,7 @@ public class Grades3
     {
         System.out.print( "\n\n Enter your grade: " );
         double grade = input.nextDouble();
-        
+
         switch( (int)grade ) {
             case 0 :
             case 1 :

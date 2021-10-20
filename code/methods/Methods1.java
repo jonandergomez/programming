@@ -22,8 +22,8 @@ public class Methods1 {
         int k = 3672;
 
         System.out.println( "Before: " + j + " " + k );
-        change(j, k);
-        inc(k, j);
+        change(j,k);
+        inc(k,j);
         System.out.println( "After: " + j + " " + k );
     } // end of main()
 
