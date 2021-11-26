@@ -61,7 +61,8 @@ public class Exponential
 
         double sum = 1.0, term = 1.0;
         int i = 0;
-        while (term > epsilon) {
+        //while (term > epsilon) {
+        while (sum + term != sum) {
             System.out.printf( "i=%6d    %25.17e  %25.17e\n", ++i, term, sum );
             term *= x/i;
             sum += term;
