@@ -181,7 +181,7 @@ public class Rainfall
         for (int month=1; month < data.length; month++) {
             for (int day=1; day < data[month].length; day++) {
                 if (lowerBound <= data[month][day] && data[month][day] <= upperBound)
-                result[counter++] = String.format("%04d-%02d-%02d it rained %.2f litres/m2.", year, month, day, data[month][day] );
+                    result[counter++] = String.format("%04d-%02d-%02d it rained %.2f litres/m2.", year, month, day, data[month][day] );
             }
         }
 
