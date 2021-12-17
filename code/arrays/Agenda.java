@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class Agenda 
+public class Agenda
     implements Serializable
 {
     private Contact []  data;
@@ -121,10 +121,12 @@ public class Agenda
 
         Calendar cal = Calendar.getInstance();
 
-        Date reference = new Date( cal.get( Calendar.DAY_OF_MONTH ), cal.get( Calendar.MONTH )+1, cal.get( Calendar.YEAR ) );
+        Date reference = new Date(cal.get(Calendar.DAY_OF_MONTH),
+                                  cal.get(Calendar.MONTH) + 1,
+                                  cal.get(Calendar.YEAR));
 
         for( int i=0; i < size; i++ )
-            if ( data[i].getAge(reference) < age ) 
+            if ( data[i].getAge(reference) < age )
                 sb.append( data[i].toString() + "\n" );
 
         return sb.toString();
@@ -139,7 +141,7 @@ public class Agenda
         Date reference = new Date( cal.get( Calendar.DAY_OF_MONTH ), cal.get( Calendar.MONTH )+1, cal.get( Calendar.YEAR ) );
 
         for( int i=0; i < size; i++ )
-            if ( data[i].getAge(reference) > age ) 
+            if ( data[i].getAge(reference) > age )
                 sb.append( data[i].toString() + "\n" );
 
         return sb.toString();
