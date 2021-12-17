@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 
-public class Matrices 
+public class Matrices
 {
     private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
 
@@ -95,12 +95,21 @@ public class Matrices
         System.out.println();
     }
 
-    private static int [][] tensorProduct( int [] a, int [] b )
+    private static int scalarProduct(int [] a, int [] b)
+    {
+        int result = 0;
+
+        for (int i = 0; i < a.length; i++)
+            result += a[i] * b[i];
+
+        return result;
+    }
+    private static int [][] tensorProduct(int [] a, int [] b)
     {
         int [][] r = new int [a.length][b.length];
 
-        for( int i=0; i < r.length; i++ ) {
-            for( int j=0; j < r[i].length; j++ ) {
+        for (int i = 0; i < r.length; i++) {
+            for (int j = 0; j < r[i].length; j++) {
                 r[i][j] = a[i] * b[j];
             }
         }
