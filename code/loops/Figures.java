@@ -33,7 +33,7 @@ public class Figures
                                        float bulbs_proportion,
                                        int offset)
     {
-        int log_width = (2 * height + 1 ) / 5;
+        int log_width = (2 * height + 1) / 5;
         if (log_width < 1) log_width = 1;
         if (log_width % 2 == 0) log_width++;
 
@@ -57,12 +57,12 @@ public class Figures
     {
         up_triangle(height, symbol, offset);
 
-        int log_width = (2 * height + 1 ) / 5;
+        int log_width = (2 * height + 1) / 5;
         if (log_width < 1) log_width = 1;
         if (log_width % 2 == 0) log_width++;
 
         int log_height = height / 3;
-        if ( log_height < 1 ) log_height = 1;
+        if (log_height < 1) log_height = 1;
 
         square(log_height, log_width, symbol, offset + height - 1 - log_width / 2);
     }

@@ -99,7 +99,7 @@ public class AskingForDate
 
         if (value < lowerBound || value > upperBound) {
             String errorMsg = String.format("%d is not in [%d,%d]",
-                                            value, lowerBound, upperBound );
+                                            value, lowerBound, upperBound);
             throw new InputMismatchException(errorMsg);
         }
 

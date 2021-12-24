@@ -34,8 +34,8 @@ public class TestStacks
         StackIntArray  sa2 = sa.clone();
         StackIntLinked sl2 = sl.clone();
 
-        System.out.println( sa2 );
-        System.out.println( sl2 );
+        System.out.println(sa2);
+        System.out.println(sl2);
 
         System.out.println("\n");
 

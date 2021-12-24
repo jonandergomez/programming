@@ -15,9 +15,9 @@ public class SaveArea
 
     public void removeTheOldestOne()
     {
-        storedGames[0].setPosition( -1 );
+        storedGames[0].setPosition(-1);
 
-        for (int i = 1; i < size; i++ ) {
+        for (int i = 1; i < size; i++) {
             
             storedGames[i-1] = storedGames[i];
             storedGames[i-1].setPosition(i - 1);

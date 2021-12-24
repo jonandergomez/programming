@@ -8,7 +8,7 @@ public class SaveGame
     private int     position;
     private float   progress;
 
-    public SaveGame( String region, int identifier, int position, TimeInstant t )
+    public SaveGame(String region, int identifier, int position, TimeInstant t)
     {
         this.region = region;
         this.identifier = identifier;
@@ -19,15 +19,15 @@ public class SaveGame
 
     public String toHHMM()
     {
-        int minutes = (int)( (progress * MINUTES_PER_DAY) / 100 );
+        int minutes = (int)((progress * MINUTES_PER_DAY) / 100);
 
-        return String.format( "%02d:%02d", minutes/60, minutes%60 );
+        return String.format("%02d:%02d", minutes / 60, minutes % 60);
     }
 
     @Override
-    public boolean equals( Object o )
+    public boolean equals(Object o)
     {
-        if ( o instanceof SaveGame ) {
+        if (o instanceof SaveGame) {
 
             SaveGame other = (SaveGame)o;
 
@@ -45,7 +45,7 @@ public class SaveGame
     {
         String format = "JAP";
 
-        switch( this.region ) {
+        switch (this.region) {
             case "SCES" :
             case "SLES" : format="PAL"; break;
             case "SCUS" :
@@ -53,12 +53,12 @@ public class SaveGame
             default     : format="JAP";
         }
 
-        return String.format( "%s: %s_%06.2f - %d - %.1f%%", 
+        return String.format("%s: %s_%06.2f - %d - %.1f%%", 
                                format,
                                    region,
                                       identifier/100.0,
                                                position,
-                                                    progress );
+                                                    progress);
     }
 
     /**
@@ -69,20 +69,20 @@ public class SaveGame
      *   <li> equal to 0 if the order of <code>this</code> and <code>other</code> is not relevant. </li>
      * </ul>
      */
-    public int compareTo( SaveGame other )
+    public int compareTo(SaveGame other)
     {
-        int rc = this.region.compareTo( other.region );
+        int rc = this.region.compareTo(other.region);
 
-        if ( rc != 0 ) {
+        if (rc != 0) {
             return rc;
         } else {
             rc = this.identifier - other.identifier;
-            if ( rc != 0 ) {
+            if (rc != 0) {
                 return rc;
             } else {
-                if ( this.progress < other.progress ) {
+                if (this.progress < other.progress) {
                     return -1;
-                } else if ( this.progress > other.progress ) {
+                } else if (this.progress > other.progress) {
                     return 1;
                 } else {
                     return 0;

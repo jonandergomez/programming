@@ -27,9 +27,9 @@ public class TestMeasure
            Then, ask the user for the name of the station and the noise level.
          */
         Scanner input = new Scanner(System.in).useLocale(Locale.US);
-        System.out.print("\n Enter the name of the station: " );
+        System.out.print("\n Enter the name of the station: ");
         String station = input.nextLine().trim();
-        System.out.print("\n Enter the noise level: " );
+        System.out.print("\n Enter the noise level: ");
         double noise = input.nextDouble();
 
 

@@ -100,7 +100,7 @@ QueueIntLinked merge(QueueIntLinked q1, QueueIntLinked q2)
   int n = Math.min(q1.size(), q2.size());
   int v;
 
-  for (int i = 0; i < n; i++ ) {
+  for (int i = 0; i < n; i++) {
     v = q1.pop(); merged.push(v); q1.push(v);
     v = q2.pop(); merged.push(v); q2.push(v);
   }

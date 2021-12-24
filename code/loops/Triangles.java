@@ -15,7 +15,7 @@ public class Triangles
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-h")) {
                 height = Integer.parseInt(args[i+1]);
-            } else if ( args[i].equals( "-o" ) ) {
+            } else if (args[i].equals("-o")) {
                 offset = Integer.parseInt(args[i+1]);
             }
         }

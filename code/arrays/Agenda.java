@@ -185,7 +185,7 @@ public class Agenda
         StringBuffer sb = new StringBuffer();
 
         for (int i = 1; i < size; i++)
-            if (data[i].equals( data[i - 1]))
+            if (data[i].equals(data[i - 1]))
                 sb.append(data[i].toString() + "\n");
 
         return sb.toString();

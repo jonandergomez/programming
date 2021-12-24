@@ -190,7 +190,7 @@ public class Rainfall
             for (int day = 1; day < data[month].length; day++) {
                 if (lowerBound <= data[month][day] && data[month][day] <= upperBound)
                     result[counter++] = String.format("%04d-%02d-%02d it rained %.2f litres/m2.",
-                                                        year, month, day, data[month][day] );
+                                                        year, month, day, data[month][day]);
             }
         }
 
@@ -251,9 +251,9 @@ public class Rainfall
 
                 } else {
                     if (counter >= 3) {
-                        res += String.format( "Subsequence starting at %04d-%02d-%02d and ending at %04d-%02d-%02d\n",
+                        res += String.format("Subsequence starting at %04d-%02d-%02d and ending at %04d-%02d-%02d\n",
                                                                        year, starting_month, starting_day,
-                                                                                               year, ending_month, ending_day );
+                                                                                               year, ending_month, ending_day);
                     }
                     starting_month = starting_day = ending_month = ending_day = -1;
                     counter=0;
@@ -261,7 +261,7 @@ public class Rainfall
             }
         }
 
-        if ( res.length() > 0 )
+        if (res.length() > 0)
             return res;
         else
             return String.format("No more than two consecutive days it rained more than %d litres/m2", threshold);

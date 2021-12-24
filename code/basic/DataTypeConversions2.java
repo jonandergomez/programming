@@ -11,7 +11,7 @@ public class DataTypeConversions2
         int indexInterval = (int)((value - minValue) / sizeInterval);
 
         System.out.printf("%.2f belongs to interval %d",
-                            value, indexInterval );
+                            value, indexInterval);
 
         double a = minValue + indexInterval * sizeInterval;
         double b = minValue + (indexInterval+1) * sizeInterval;

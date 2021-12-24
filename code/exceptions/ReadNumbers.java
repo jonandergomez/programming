@@ -8,7 +8,7 @@ public class ReadNumbers
 
     public static void main(String [] args)
     {
-        input = new Scanner(System.in); // .useLocale( Locale.US );
+        input = new Scanner(System.in); // .useLocale(Locale.US);
         // Uncomment useLocale() for using the dot as the decimal separator
         boolean correct;
         int n = 0;

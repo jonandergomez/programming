@@ -81,7 +81,7 @@ public class RussianProduct
                 return recursive(a << 1, b >> 1);
             }
         } else {
-            throw new Error( "Negative arguments are not accepted!" );
+            throw new Error("Negative arguments are not accepted!");
         }
     }
 

@@ -27,7 +27,7 @@ public class Contact
     public String getEMail() { return email; }
     public String getPhoneNumber() { return phoneNumber; }
     public String getBirthDate() { return birthDate.toString(); }
-    public int    getAge( Date reference ) { return birthDate.getAge( reference ); }
+    public int    getAge(Date reference) { return birthDate.getAge(reference); }
 
     public int getMonthOfBirth() { return birthDate.getMonth(); }
 

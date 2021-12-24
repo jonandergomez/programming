@@ -204,7 +204,7 @@ public class TestAgenda
                 if (oos != null) oos.close();
             }
             catch (IOException ioe) {
-                System.err.println( "ERROR trying to close file! " + ioe.getMessage());
+                System.err.println("ERROR trying to close file! " + ioe.getMessage());
             }
         }
     }

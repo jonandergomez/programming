@@ -12,7 +12,7 @@ public class Rainfall1
 
     private static int daysPerMonth(String m, int year)
     {
-        switch(m.toLowerCase()) {
+        switch (m.toLowerCase()) {
             case "january" :
             case "march" :
             case "may" :
