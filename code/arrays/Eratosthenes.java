@@ -100,14 +100,14 @@ public class Eratosthenes
                 System.out.printf(" %5d K\n", i/1000);
             }
             // final report
-            System.out.printf("\nTotally processed around %.2f M numbers\n\n", i/1.0e+6);
+            System.out.printf("\nTotally processed around %.2f M numbers\n\n", i / 1.0e+6);
 
         } else {
 
             for (int i = 0; i < 20; ++i) {
                 int n = r.nextInt(1 << 30); // 2 raised 30 = 0x040000000 = 1073741824
                 System.out.printf("%12d %s a prime number\n",
-                                    n, primes.isPrime(n) ? "  is  " : "is not" );
+                                    n, primes.isPrime(n) ? "  is  " : "is not");
             }
         }
     }

@@ -4,14 +4,15 @@ import java.io.*;
 
 public class TestRainfall
 {
-    private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
+    private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
-    private static final String monthName [] = { "*", "January", "February", "March",
-                                                      "April",   "May",      "June",
-                                                      "July",    "August",   "September",
-                                                      "October", "November", "December" };
+    private static final String monthName [] = {"*",
+                                                "January", "February", "March",
+                                                "April",   "May",      "June",
+                                                "July",    "August",   "September",
+                                                "October", "November", "December" };
 
-    public static void main( String [] args )
+    public static void main(String [] args)
         throws Exception
     {
         File f = new File("bobo.txt");
@@ -32,18 +33,18 @@ public class TestRainfall
                     int year = 0;
                     System.out.print("\n Which year? ");
                     year = input.nextInt();
-                    rf = new Rainfall( year );
+                    rf = new Rainfall(year);
                     rf.randomFill();
                     break;
                 case 2:
-                    System.out.println( rf.toString() );
+                    System.out.println(rf.toString());
                     System.out.print("\n Press ENTER to continue ... ");
                     input.nextLine();
                     break;
 
                 case 3:
                     double [][] result = rf.computeAverages();
-                    reportAveragesAndAccumulated( result );
+                    reportAveragesAndAccumulated(result);
                     break;
 
                 case 4:
@@ -113,7 +114,7 @@ public class TestRainfall
 
                 default:
             }
-        } while( option != 0 );
+        } while (option != 0);
     }
 
     private static void reportAveragesAndAccumulated(double [][] result)
@@ -132,7 +133,7 @@ public class TestRainfall
     private static int menu()
     {
         int option = -1;
-        boolean valid_option=false;
+        boolean valid_option = false;
         do {
             System.out.println("\n\n ----- MENU -----\n");
             System.out.println("\t 1. Create the data structure.");
@@ -161,7 +162,7 @@ public class TestRainfall
                 System.err.println("\n\n SORRY! You entered and invalid option!");
             }
 
-        } while(!valid_option);
+        } while(! valid_option);
 
         return option;
     }

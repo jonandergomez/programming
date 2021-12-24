@@ -43,7 +43,7 @@ public class BinarySearch
         } else {
 
             // check the central position of the current slice
-            int k = (left + right ) / 2;
+            int k = (left + right) / 2;
 
             if (a[k] == x) {
                 return k;

@@ -3,15 +3,15 @@ import java.util.*;
 import java.io.*;
 
 
-public class TestRainfall1 
+public class TestRainfall1
 {
-    private static Scanner input = new Scanner( System.in ).useLocale( Locale.US );
+    private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
-    public static void main( String [] args )
+    public static void main(String [] args)
     {
-        Rainfall1 rf = new Rainfall1( "November", 2019 );
+        Rainfall1 rf = new Rainfall1("November", 2019);
 
-        System.out.println( rf );
+        System.out.println(rf);
 
     }
 }
