@@ -212,7 +212,7 @@ public class StackIntLinked
                 newStack.push(value);
                 this.push(value);
             }
-            catch(Exception e) {
+            catch (Exception e) {
                 e.printStackTrace(System.err);
                 throw new Error("Unexpected exception!");
             }

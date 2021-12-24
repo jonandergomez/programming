@@ -16,6 +16,6 @@ public class StudentSelection
 
         Random r = new Random();
 
-        System.out.println("student number: " + (r.nextInt(n)+1));
+        System.out.println("student number: " + (r.nextInt(n) + 1));
     }
 }

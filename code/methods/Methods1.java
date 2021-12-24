@@ -1,7 +1,7 @@
 
 public class Methods1 {
 
-    public static void change( int j, int k )
+    public static void change(int j, int k)
     {
         int aux = j;
         j = k;
@@ -9,7 +9,7 @@ public class Methods1 {
         System.out.println("Inside: " + j + " " + k);
     } // end of change()
 
-    public static void inc( int j, int k )
+    public static void inc(int j, int k)
     {
         j++;
         k++;
@@ -21,10 +21,10 @@ public class Methods1 {
         int j = 1335;
         int k = 3672;
 
-        System.out.println( "Before: " + j + " " + k );
-        change(j,k);
-        inc(k,j);
-        System.out.println( "After: " + j + " " + k );
+        System.out.println("Before: " + j + " " + k);
+        change(j, k);
+        inc(k, j);
+        System.out.println("After: " + j + " " + k);
     } // end of main()
 
 } // end of class

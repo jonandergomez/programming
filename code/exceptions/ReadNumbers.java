@@ -21,7 +21,7 @@ public class ReadNumbers
                 n = input.nextInt();
                 if (n < 1 || n > 100) throw new Exception("Out of range!");
             }
-            catch(InputMismatchException ime) {
+            catch (InputMismatchException ime) {
                 correct = false;
                 String message = ime.getMessage();
                 if (message != null)
@@ -29,7 +29,7 @@ public class ReadNumbers
                 else
                     System.err.println("Catch 1 :  unknown reason");
             }
-            catch(Exception e) {
+            catch (Exception e) {
                 correct = false;
                 System.err.println("Catch 2 " + e.getMessage());
             }
@@ -37,7 +37,7 @@ public class ReadNumbers
                 input.nextLine(); // For cleaning the standard input buffer
             }
 
-        } while(! correct);
+        } while (! correct);
 
         do {
             try {
@@ -46,7 +46,7 @@ public class ReadNumbers
                 x = input.nextDouble();
                 if (x < 0.0 || x > 1.0) throw new Exception("Out of range!");
             }
-            catch(InputMismatchException ime) {
+            catch (InputMismatchException ime) {
                 correct = false;
                 String message = ime.getMessage();
                 if (message != null)
@@ -54,14 +54,14 @@ public class ReadNumbers
                 else
                     System.err.println(ime.toString());
             }
-            catch(Exception e) {
+            catch (Exception e) {
                 correct = false;
                 System.err.println(e.getMessage());
             }
             finally {
                 input.nextLine(); // For cleaning the standard input buffer
             }
-        } while(! correct);
+        } while (! correct);
 
 
         System.out.println();

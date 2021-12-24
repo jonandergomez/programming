@@ -76,7 +76,7 @@ public class ListIntArray
      */
     private void augmentCapacity()
     {
-        int [] temp = new int [ data.length + 1000 ];
+        int [] temp = new int [data.length + 1000];
 
         for (int i = 0; i < size; i++) temp[i] = data[i];
 

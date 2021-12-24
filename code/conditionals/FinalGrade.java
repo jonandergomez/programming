@@ -17,7 +17,7 @@ public class FinalGrade
 
         double fg = finalGrade(mg1, mg2, lg1, lg2, attendance);
 
-        System.out.printf( "\n The final grade is %.1f\n", fg );
+        System.out.printf("\n The final grade is %.1f\n", fg);
     }
 
     static double updateGrade1(double g1, double g2)

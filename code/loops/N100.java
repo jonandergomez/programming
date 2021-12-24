@@ -20,7 +20,7 @@ class N100
     {
         long max_length = 0;
 
-        for(int n=a; n <= b; n++) {
+        for (int n = a; n <= b; n++) {
             long l = cycle(n);
             max_length = Math.max(l, max_length);
         }

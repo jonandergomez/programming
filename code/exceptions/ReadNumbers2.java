@@ -20,7 +20,7 @@ public class ReadNumbers2
                 n = input.nextInt();
                 if (n < 0 || n > 100) throw new InputMismatchException("Out of range!");
             }
-            catch(InputMismatchException ime) {
+            catch (InputMismatchException ime) {
                 correct = false;
                 System.err.println("ERROR: " + ime.getMessage());
             }
@@ -28,7 +28,7 @@ public class ReadNumbers2
             {
                 input.nextLine();
             }
-        } while(! correct);
+        } while (! correct);
 
         do {
             correct = true;
@@ -37,7 +37,7 @@ public class ReadNumbers2
                 x = input.nextDouble();
                 if (x < 0.0 || x > 1.0) throw new InputMismatchException("Out of range!");
             }
-            catch(InputMismatchException ime) {
+            catch (InputMismatchException ime) {
                 correct = false;
                 System.err.println("ERROR: " + ime.getMessage());
             }
@@ -45,7 +45,7 @@ public class ReadNumbers2
             {
                 input.nextLine();
             }
-        } while(! correct);
+        } while (! correct);
 
 
         System.out.println();

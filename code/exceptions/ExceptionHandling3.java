@@ -16,18 +16,18 @@ public class ExceptionHandling3
                 index = input.nextInt();
                 showValue(A, index);
             }
-            catch(InputMismatchException ime) {
+            catch (InputMismatchException ime) {
                 ime.printStackTrace(System.err);
                 System.out.printf("The message is: %s\n", ime.getMessage());
                 valueOK = false;
                 input.nextLine();
             }
-            catch(ArrayIndexOutOfBoundsException aioobe) {
+            catch (ArrayIndexOutOfBoundsException aioobe) {
                 aioobe.printStackTrace(System.err);
                 System.out.printf("ERROR: %d is not a valid index!\n", index);
                 valueOK = false;
             }
-        } while(! valueOK);
+        } while (! valueOK);
     }
     public static void showValue(int [] A, int i)
         throws ArrayIndexOutOfBoundsException

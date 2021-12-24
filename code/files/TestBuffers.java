@@ -13,11 +13,14 @@ public class TestBuffers
                 filename = args[i + 1];
             }
         }
-        
+
         if (filename != null) {
             Scanner sf = null;
             try {
-                sf = new Scanner(new BufferedInputStream(new FileInputStream(new File(filename))));
+                sf = new Scanner(
+                        new BufferedInputStream(
+                            new FileInputStream(
+                                new File(filename))));
 
                 while (true) {
                     String line = sf.nextLine(); //.trim();

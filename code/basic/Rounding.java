@@ -6,7 +6,7 @@ public class Rounding
     {
         Scanner input = new Scanner(System.in).useLocale(Locale.US);
 
-        System.out.print("\n Please, enter a double value:" );
+        System.out.print("\n Please, enter a double value:");
         double x = input.nextDouble();
 
         double y = myRound(x, 2);
@@ -17,6 +17,6 @@ public class Rounding
     }
     public static double myRound(double x, int digits)
     {
-        return Math.round(x*Math.pow(10,digits)) / Math.pow(10,digits);
+        return Math.round(x * Math.pow(10, digits)) / Math.pow(10, digits);
     }
 }

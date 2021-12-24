@@ -14,7 +14,7 @@ public class TestScanner
         try{
             scanner = new Scanner(new File("things.txt"));
         }
-        catch(FileNotFoundException ex) {
+        catch (FileNotFoundException ex) {
             System.err.println("File doesn’t exist. " + ex.getMessage());
             System.exit(0);
         }

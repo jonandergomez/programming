@@ -33,10 +33,10 @@ public class WorkWithFiles2
                     int championships = Integer.parseInt(tokens[3]);
                 }
             }
-            catch(NumberFormatException e) {
+            catch (NumberFormatException e) {
                 output.printf("Error line %d: Invalid format for an integer.\n", counter);
             }
-            catch(Exception e) {
+            catch (Exception e) {
                 output.println(e.getMessage());
             }
         }

@@ -18,7 +18,7 @@ public class TestPrintWriter
             // Closes the file
             pw.close();
         }
-        catch(FileNotFoundException e) {
+        catch (FileNotFoundException e) {
             System.err.println("Error opening or creating " + fileName);
         }
     }

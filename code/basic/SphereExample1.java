@@ -13,8 +13,8 @@ public class SphereExample1
 
         double area, volume1, volume2;
 
-        area = 4 * Math.PI * radius*radius;
-        volume1 = 4.0/3 * Math.PI * radius * radius * radius;
+        area = 4 * Math.PI * radius * radius;
+        volume1 = 4.0 / 3 * Math.PI * radius * radius * radius;
         volume2 = area * radius / 3;
 
 

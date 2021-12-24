@@ -18,11 +18,11 @@ public class TestBinaryWriting
 
             oos.close();
         }
-        catch(IOException e)
+        catch (IOException e)
         {
             e.printStackTrace(System.err);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             e.printStackTrace(System.err);
         }

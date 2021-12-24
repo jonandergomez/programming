@@ -21,7 +21,7 @@ public class RealDataTypes2
 
         x = 1.2345670e+10F;
         System.out.printf("x = %.30f\n", x);
-        for (int i=0; i < 100000; i++) x++;
+        for (int i = 0; i < 100000; i++) x++;
         System.out.printf("x = %.30f\n", x);
         x += 100000;
         System.out.printf("x = %.30f\n", x);
@@ -31,7 +31,7 @@ public class RealDataTypes2
 
         y = 1.2345670e+10;
         System.out.printf("y = %.30f\n", y);
-        for (int i=0; i < 100000; i++) y++;
+        for (int i = 0; i < 100000; i++) y++;
         System.out.printf("y = %.30f\n", y);
         y += 100000;
         System.out.printf("y = %.30f\n", y);

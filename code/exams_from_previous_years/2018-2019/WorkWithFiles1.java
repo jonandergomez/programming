@@ -26,7 +26,7 @@ public class WorkWithFiles1
                 output.println(value);
                 sum += value;
             }
-            catch(InputMismatchException e) {
+            catch (InputMismatchException e) {
                 output.printf("(Error: %s)\n", input.next());
             }
         }
@@ -50,7 +50,7 @@ public class WorkWithFiles1
                     output.println(value);
                     sum += value;
                 }
-                catch(InputMismatchException e) {
+                catch (InputMismatchException e) {
                     output.printf("(Error: %s)\n", input.next());
                 }
             }

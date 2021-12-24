@@ -415,7 +415,7 @@ public class ListIntLinked2
             left.first = this.first;
             left.last = node.getPrevious();
             left.cursor = null;
-            left.size = this.size/2;
+            left.size = this.size / 2;
             right.first = node;
             right.last = this.last;
             right.size = this.size - left.size;
@@ -462,7 +462,7 @@ public class ListIntLinked2
                 } else {
                     target.last.setNext(a);
                     a.setPrevious(target.last);
-                    target.last=a;
+                    target.last = a;
                 }
                 a = a.getNext();
                 target.last.setNext(null);
@@ -475,7 +475,7 @@ public class ListIntLinked2
                 } else {
                     target.last.setNext(b);
                     b.setPrevious(target.last);
-                    target.last=b;
+                    target.last = b;
                 }
                 b = b.getNext();
                 target.last.setNext(null);
@@ -560,7 +560,7 @@ public class ListIntLinked2
             @Override
             public int nextIndex()
             {
-                return index+1;
+                return index + 1;
             }
 
             @Override
@@ -575,7 +575,7 @@ public class ListIntLinked2
             @Override
             public int previousIndex()
             {
-                return index-1;
+                return index - 1;
             }
 
             @Override

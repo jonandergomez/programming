@@ -62,19 +62,19 @@ public class AskingForDate
 
                 checkDate(dayOfMonth, month, year);
             }
-            catch(InputMismatchException ime)
+            catch (InputMismatchException ime)
             {
                 dateOK = false;
                 System.out.printf("ERROR: %s\n", ime.getMessage());
                 input.nextLine(); // Clean input buffer
             }
-            catch(IllegalDateException ide)
+            catch (IllegalDateException ide)
             {
                 dateOK = false;
                 System.out.printf("%s\n", ide.getMessage());
                 input.nextLine(); // Clean input buffer
             }
-        } while(! dateOK);
+        } while (! dateOK);
 
 
         Calendar cal = Calendar.getInstance();

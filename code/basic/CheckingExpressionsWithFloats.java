@@ -7,15 +7,15 @@ public class CheckingExpressionsWithFloats
   {
       float a, b;
 
-      System.out.print("\n enter a value for A: " );
+      System.out.print("\n enter a value for A: ");
       a = input.nextFloat();
-      System.out.print("\n enter a value for B: " );
+      System.out.print("\n enter a value for B: ");
       b = input.nextFloat();
 
       float quotient = (int)(a / b);
       float remainder = a % b;
-      //boolean z = (a/b)*b + (a%b) == a;
-      boolean z = (int)(a/b)*b + (a%b) == a;
+      //boolean z = (a / b) * b + (a % b) == a;
+      boolean z = (int)(a / b) * b + (a % b) == a;
 
       System.out.println();
       System.out.println("quotient is " + quotient);
@@ -27,7 +27,7 @@ public class CheckingExpressionsWithFloats
                            z ? "true" : "false");
 
 
-      float lhs = (int)(a/b)*b + (a%b);
+      float lhs = (int)(a / b) * b + (a % b);
       float rhs = a;
 
       System.out.printf("lhs: %30.20f\n", lhs);

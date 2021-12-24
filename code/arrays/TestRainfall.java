@@ -162,7 +162,7 @@ public class TestRainfall
                 System.err.println("\n\n SORRY! You entered and invalid option!");
             }
 
-        } while(! valid_option);
+        } while (! valid_option);
 
         return option;
     }

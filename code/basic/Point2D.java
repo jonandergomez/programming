@@ -76,7 +76,7 @@ public class Point2D
 
     public double r()
     {
-        return Math.sqrt(x*x + y*y);
+        return Math.sqrt(x * x + y * y);
     }
     public double atan()
     {
@@ -98,8 +98,8 @@ public class Point2D
     public static void main(String [] args)
     {
         Point2D p1 = new Point2D();    // invokes the default constructor
-        Point2D p2 = new Point2D(4,5); // invokes the generic constructor
-        Point2D p3 = new Point2D(8,1); // invokes the generic constructor
+        Point2D p2 = new Point2D(4, 5); // invokes the generic constructor
+        Point2D p3 = new Point2D(8, 1); // invokes the generic constructor
         Point2D p4 = p1;
 
         System.out.println();

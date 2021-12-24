@@ -35,7 +35,7 @@ public class BasicExamples
         if (n == 0)
             return 0;
         else
-            return 1 + natural(n-1);
+            return 1 + natural(n - 1);
     }
 
     private static int factorial(int n)

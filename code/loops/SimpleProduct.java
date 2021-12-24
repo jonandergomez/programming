@@ -26,8 +26,8 @@ public class SimpleProduct
 
             System.out.print('.');
 
-            if (p != a*b)
-                throw new Error(String.format("%d * %d = %d != %d", a, b, p, a*b));
+            if (p != a * b)
+                throw new Error(String.format("%d * %d = %d != %d", a, b, p, a * b));
         }
     }
 

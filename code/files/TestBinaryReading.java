@@ -22,12 +22,12 @@ public class TestBinaryReading
             System.out.println(str);
             System.out.printf("The spanish deficit for %d is %f\n", year, deficit);
         }
-        catch(IOException e)
+        catch (IOException e)
         {
             System.err.println("Derived from IOException.");
             e.printStackTrace(System.err);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             System.err.println("Derived from Exception.");
             e.printStackTrace(System.err);

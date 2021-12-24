@@ -12,8 +12,8 @@ public class RussianProduct
 {
     public static int iterative(int a, int b)
     {
-        int p=0;
-        int sign=1;
+        int p = 0;
+        int sign = 1;
 
         if (b < 0) { a = -a; b = -b; }
         if (a < 0) { sign = -1; a = -a; }
@@ -32,8 +32,8 @@ public class RussianProduct
     }
     public static int iterative_debug(int a, int b)
     {
-        int p=0;
-        int sign=1;
+        int p = 0;
+        int sign = 1;
 
         if (b < 0) { a = -a; b = -b; }
         if (a < 0) { sign = -1; a = -a; }
@@ -58,7 +58,7 @@ public class RussianProduct
 
     public static int wrapper_recursive(int a, int b)
     {
-        int sign=1;
+        int sign = 1;
         if (b < 0) { a = -a; b = -b; }
         if (a < 0) { sign = -1; a = -a; }
 
@@ -107,7 +107,7 @@ public class RussianProduct
             int a = r.nextInt(100000);
             int b = r.nextInt(100000);
             int p = iterative_debug(a, b);
-            System.out.printf(" %6d %6d %15d %15d\n", a, b, p, a*b);
+            System.out.printf(" %6d %6d %15d %15d\n", a, b, p, a * b);
         }
     }
 }

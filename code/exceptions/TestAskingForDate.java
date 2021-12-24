@@ -9,7 +9,7 @@ import java.util.*;
 public class TestAskingForDate
 {
     /** <em>friendly</em> class variable for reading data from standard input */
-    static Scanner input = new Scanner( System.in );
+    static Scanner input = new Scanner(System.in);
 
     /**
      * <code>main()</code> method for testing the use of objects of other classes.

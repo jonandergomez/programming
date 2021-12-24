@@ -27,54 +27,54 @@ public class Pluviometer
         rain = new double [13][32];
     }
 
-    public void save( String filename )
+    public void save(String filename)
     {
         try {
-            File file = new File( filename );
-            FileOutputStream fos = new FileOutputStream( file );
-            BufferedOutputStream bos = new BufferedOutputStream( fos );
-            ObjectOutputStream oos = new ObjectOutputStream( bos );
+            File file = new File(filename);
+            FileOutputStream fos = new FileOutputStream(file);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
 
-            oos.writeObject( this );
+            oos.writeObject(this);
             oos.close();
         }
-        catch( FileNotFoundException fnfe )
+        catch (FileNotFoundException fnfe)
         {
-            fnfe.printStackTrace( System.err );
+            fnfe.printStackTrace(System.err);
             System.exit(1);
         }
-        catch( IOException ioe )
+        catch (IOException ioe)
         {
-            ioe.printStackTrace( System.err );
+            ioe.printStackTrace(System.err);
             System.exit(1);
         }
     }
 
-    public static Pluviometer load( String filename )
+    public static Pluviometer load(String filename)
     {
         Pluviometer p = null;
 
         try {
-            File file = new File( filename );
-            FileInputStream fis = new FileInputStream( file );
-            BufferedInputStream bis = new BufferedInputStream( fis );
-            ObjectInputStream ois = new ObjectInputStream( bis );
+            File file = new File(filename);
+            FileInputStream fis = new FileInputStream(file);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            ObjectInputStream ois = new ObjectInputStream(bis);
 
             Object o = ois.readObject();
 
-            if ( o instanceof Pluviometer )
+            if (o instanceof Pluviometer)
                 p = (Pluviometer)o;
             else
-                throw new ClassNotFoundException( "Invalid class loaded from file!" );
+                throw new ClassNotFoundException("Invalid class loaded from file!");
         }
-        catch( ClassNotFoundException|FileNotFoundException e )
+        catch (ClassNotFoundException|FileNotFoundException e)
         {
-            e.printStackTrace( System.err );
+            e.printStackTrace(System.err);
             System.exit(1);
         }
-        catch( IOException e )
+        catch (IOException e)
         {
-            e.printStackTrace( System.err );
+            e.printStackTrace(System.err);
             System.exit(1);
         }
 

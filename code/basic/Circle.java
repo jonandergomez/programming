@@ -47,7 +47,7 @@ public class Circle {
     public void setColour(String newColour) { colour = newColour; }
 
     /** Updates the coordinates of the center of the circle. */
-    public void setCentre(int px, int py) { centreX=px; centreY=py; }
+    public void setCentre(int px, int py) { centreX = px; centreY = py; }
 
     /** Shifts the circle to the right. */
     public void moveToRight() { centreX += 10; }
@@ -66,7 +66,7 @@ public class Circle {
     public String toString()
     {
         String res = "Circle with radius "+ radius;
-        res += ", colour "+colour+" and centred at ("+centreX+","+centreY+")";
+        res += ", colour " + colour + " and centred at (" + centreX + "," + centreY + ")";
         return res;
     }
 }

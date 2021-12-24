@@ -139,7 +139,7 @@ public class QueueIntArray
             if (this.size() != other.size()) return false;
 
             try {
-                boolean are_equal=true;
+                boolean are_equal = true;
                 for (int i = 0; i < this.size(); i++) {
 
                     are_equal = are_equal && (this.front() == other.front());
@@ -167,7 +167,7 @@ public class QueueIntArray
             if (this.size() != other.size()) return false;
 
             try {
-                boolean are_equal=true;
+                boolean are_equal = true;
                 int i1 = this.first;
                 int i2 = other.first;
                 for (int i = 0; i < this.size() && are_equal; i++) {
@@ -245,7 +245,7 @@ public class QueueIntArray
         boolean wasFound = false;
 
         for (int i = 0; i < this.size(); i++) {
-            
+
             wasFound = wasFound || (this.front() == x);
 
             this.push(this.pop());

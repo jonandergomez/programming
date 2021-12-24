@@ -32,7 +32,7 @@ public class Sums
         */
         long sum = 0;
 
-        for (int i=1; i <= n; i++) sum += i;
+        for (int i = 1; i <= n; i++) sum += i;
 
         return sum;
     }
@@ -43,7 +43,7 @@ public class Sums
         */
         long sum = 0;
 
-        for (int i=1; i <= n; i++) sum += i*i;
+        for (int i = 1; i <= n; i++) sum += i * i;
 
         return sum;
     }
@@ -51,7 +51,7 @@ public class Sums
     {
         double sum = 0;
 
-        for (int i=1; i <= n; i++) sum += 1.0/i;
+        for (int i = 1; i <= n; i++) sum += 1.0 / i;
 
         return sum;
     }
@@ -59,12 +59,12 @@ public class Sums
     {
         double sum = 0;
 
-        for (double i=1; i <= n; i++) {
+        for (double i = 1; i <= n; i++) {
         /*
-            System.out.printf("DEBUG: i=%f i*i=%f term=%e\n", i, i*i, 1.0/(i*i));
-            if (i*i == 0) break;
+            System.out.printf("DEBUG: i=%f i*i=%f term=%e\n", i, i * i, 1.0 / (i * i));
+            if (i * i == 0) break;
         */
-            sum += 1.0/(i*i);
+            sum += 1.0 / (i * i);
         }
 
         return sum;
@@ -73,7 +73,7 @@ public class Sums
     {
         long p = 1;
 
-        for (int i=1; i <= n; i++) p *= i;
+        for (int i = 1; i <= n; i++) p *= i;
 
         return p;
     }
@@ -84,7 +84,7 @@ public class Sums
 
         // for (int i=0; i <= n; i++) sum += Math.pow(2,i); // GO TO next academic year
 
-        for (int i=0; i <= n; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.printf("BEFORE: %d %d ", sum, p);
             sum += p;
             p *= 2;
@@ -98,9 +98,10 @@ public class Sums
         double sum = 0;
         double p = 1;
 
-        // for (int i=0; i <= n; i++) sum += 1.0/Math.pow(2,i); // GO TO next academic year
+        // for (int i=0; i <= n; i++) sum += 1.0 / Math.pow(2, i);
+        // GO TO next academic year
 
-        for (int i=0; i <= n; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.printf("BEFORE: %e %e ", sum, p);
             // sum += 1/p;
             // p *= 2;
@@ -116,7 +117,7 @@ public class Sums
         double p = 1;
 
         // p = Math.pow(x, n);
-        for (int i=1; i <= n; i++) p *= x;
+        for (int i = 1; i <= n; i++) p *= x;
 
         return p;
     }

@@ -10,9 +10,9 @@ public class ExceptionHandling
         try {
             int minutes = getMinutes();
         }
-        catch(InputMismatchException ime) { /* Here the code. */ }
-        catch(IOException ioe) { /* Here the code. */ }
-        catch(Exception e) { /* Here the code. */ }
+        catch (InputMismatchException ime) { /* Here the code. */ }
+        catch (IOException ioe) { /* Here the code. */ }
+        catch (Exception e) { /* Here the code. */ }
         finally { /* Code that will be executed always. */ }
     }
     public static int getMinutes()

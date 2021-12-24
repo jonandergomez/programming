@@ -20,7 +20,7 @@ class SeeDirectory
 
         if (d.isDirectory()) {
             System.out.println("--------------------------------");
-            for(File f : d.listFiles()) {
+            for (File f : d.listFiles()) {
                 System.out.println(f);
             }
             System.out.println("--------------------------------");

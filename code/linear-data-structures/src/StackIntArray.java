@@ -187,7 +187,7 @@ public class StackIntArray
                 return b;
             }
         }
-        catch(Exception e) {
+        catch (Exception e) {
             e.printStackTrace(System.err);
             System.exit(1);
         }
@@ -211,7 +211,7 @@ public class StackIntArray
                 this.push(temp.pop());
             }
         }
-        catch(Exception e) {
+        catch (Exception e) {
             e.printStackTrace(System.err);
             System.exit(1);
         }
