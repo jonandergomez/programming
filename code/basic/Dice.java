@@ -11,7 +11,7 @@ public class Dice
 
         System.out.println("The roll of the dice is: " + dice);
 
-        testing();
+        //testing();
     }
 
     private static void testing()
