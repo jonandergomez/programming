@@ -20,12 +20,14 @@ public class BasicExamples
         else
             System.out.println(sumOfFigures_r(415327));
 
+        int n = 55;
+
         long ms = System.currentTimeMillis();
-        long f = fibonacci_i(47);
+        long f = fibonacci_i(n);
         ms = System.currentTimeMillis() - ms;
         System.out.printf("Iterative version needed %.6f seconds\n", ms / 1.0e+3);
         ms = System.currentTimeMillis();
-        f = fibonacci_r(47);
+        f = fibonacci_r(n);
         ms = System.currentTimeMillis() - ms;
         System.out.printf("Recursive version needed %.6f seconds\n", ms / 1.0e+3);
     }
