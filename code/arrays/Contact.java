@@ -1,6 +1,8 @@
+import java.util.*;
+import java.io.*;
 
 public class Contact
-    implements Comparable<Contact> // You have to believe this is correct!
+    implements Serializable,Comparable<Contact> // You have to believe this is correct!
 {
     private String lastname;
     private String name;

@@ -59,12 +59,14 @@ public class TestAgenda
                     input.nextLine();
                     break;
                 case 8 :
-                    saveToFile(agenda);
+                    //saveToFile(agenda);
                     //saveToBinaryFile(agenda);
+                    saveToBinaryFile_v2(agenda);
                     break;
                 case 9 :
-                    loadFromFile(agenda);
+                    // loadFromFile(agenda);
                     // agenda = loadFromBinaryFile();
+                    loadFromBinaryFile_v2(agenda);
                     break;
                 case 0 : break;
                 default :
@@ -202,6 +204,63 @@ public class TestAgenda
         finally {
             try {
                 if (oos != null) oos.close();
+            }
+            catch (IOException ioe) {
+                System.err.println("ERROR trying to close file! " + ioe.getMessage());
+            }
+        }
+    }
+    public static void saveToBinaryFile_v2(Agenda agenda)
+    {
+        ObjectOutputStream oos = null;
+        try {
+            FileOutputStream fos = new FileOutputStream(new File("agenda.dat"));
+            oos = new ObjectOutputStream(fos);
+
+            for (int i = 0; i < agenda.size(); i++) {
+                oos.writeObject(agenda.getItemAt(i));
+            }
+        }
+        catch (IOException ioe) {
+            System.err.println("ERROR trying to save the agenda into a file! " + ioe.getMessage());
+        }
+        finally {
+            try {
+                if (oos != null) oos.close();
+            }
+            catch (IOException ioe) {
+                System.err.println("ERROR trying to close file! " + ioe.getMessage());
+            }
+        }
+    }
+    public static void loadFromBinaryFile_v2(Agenda agenda)
+    {
+        ObjectInputStream ois = null;
+        try {
+            FileInputStream fis = new FileInputStream(new File("agenda.dat"));
+            ois = new ObjectInputStream(fis);
+
+            boolean endOfFileReached = false;
+            while (! endOfFileReached) {
+                try {
+                    Object o = ois.readObject();
+                    if (o instanceof Contact) {
+                        agenda.addInOrder((Contact) o);
+                    } else {
+                        System.err.println("Loaded from file an object of an unknown class!");
+                    }
+                }
+                catch (EOFException eofe) {
+                    System.err.println("End of file reached, all data have been loaded!");
+                    endOfFileReached = true;
+                }
+            }
+        }
+        catch (IOException ioe) { System.err.println("ERROR trying to open or read from file! " + ioe.getMessage()); }
+        catch (ClassNotFoundException cnfe) { System.err.println("ERROR: " + cnfe.getMessage()); }
+        finally {
+            try {
+                if (ois != null) ois.close();
             }
             catch (IOException ioe) {
                 System.err.println("ERROR trying to close file! " + ioe.getMessage());
