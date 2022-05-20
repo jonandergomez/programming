@@ -204,6 +204,7 @@ public class QueueIntLinked
         }
     }
     public static void split(QueueIntLinked q, int x)
+        throws Exception
     {
         int counter = q.size();
         boolean found = false;
@@ -226,6 +227,7 @@ public class QueueIntLinked
 
     // from the retake of academic year 2018/2019
     public static void moveBack(QueueIntLinked q, int x)
+        throws Exception
     {
         boolean found = false;
         int counter = q.size();

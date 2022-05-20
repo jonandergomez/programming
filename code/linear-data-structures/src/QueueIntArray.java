@@ -241,6 +241,7 @@ public class QueueIntArray
 
 
     public boolean isContained(int x)
+        throws Exception
     {
         boolean wasFound = false;
 

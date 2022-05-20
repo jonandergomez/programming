@@ -221,6 +221,7 @@ public class StackIntLinked
 
     // from exam of academic year 2019/2020
     public static StackIntLinked removeGreaterThan(StackIntLinked s, int x)
+        throws Exception
     {
         StackIntLinked temp = new StackIntLinked();
         StackIntLinked output = new StackIntLinked();
@@ -241,6 +242,7 @@ public class StackIntLinked
 
     // from an exam of academic year 2019/2020
     public int removeLessThanInOrd(int x)
+        throws Exception
     {
         int counter = 0;
 
