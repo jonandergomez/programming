@@ -11,7 +11,7 @@ public class TimeConversion
         System.out.printf(" %5d hours\n", hours);
         seconds %= (60 * 60);
         long minutes = seconds / 60;
-        System.out.printf(" %5d minutes\n", hours);
+        System.out.printf(" %5d minutes\n", minutes);
         seconds %= 60;
         System.out.printf(" %5d seconds\n", seconds);
     }
