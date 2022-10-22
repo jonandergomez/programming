@@ -32,7 +32,7 @@ public class Swap4
                              + d + " " + Swap4.UNITS
                              + " from the origin.");
 
-        swap(p1, p2);
+        Swap4.swap(p1, p2);
 
         d = p1.distance(p2);
 

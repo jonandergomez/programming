@@ -1,4 +1,3 @@
-
 public class Methods1 {
 
     public static void change(int j, int k)
@@ -26,5 +25,4 @@ public class Methods1 {
         inc(k, j);
         System.out.println("After: " + j + " " + k);
     } // end of main()
-
 } // end of class
