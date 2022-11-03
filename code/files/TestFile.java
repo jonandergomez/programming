@@ -1,4 +1,3 @@
-
 import java.io.*;
 
 class TestFile
@@ -20,4 +19,3 @@ class TestFile
         System.out.println("   length(): " + f.length());
     }
 }
-

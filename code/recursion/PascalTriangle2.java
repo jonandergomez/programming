@@ -1,7 +1,4 @@
 
-import java.util.*;
-
-
 public class PascalTriangle2
 {
     private long [][] pascalTriangle;

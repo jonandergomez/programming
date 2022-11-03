@@ -1,13 +1,9 @@
-
-
-import java.util.*;
-import java.io.*;
-
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Figures
 {
     private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
-
 
     public static void main(String [] args)
     {

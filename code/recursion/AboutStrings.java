@@ -1,12 +1,10 @@
-import java.util.*;
-
 
 public class AboutStrings
 {
     public static void main(String [] args)
     {
         for (int i = 1; i < args.length; i++) {
-            String text = args[i-1];
+            String text = args[i - 1];
             String pattern = args[i];
 
             if (isPrefix(text, pattern)) {

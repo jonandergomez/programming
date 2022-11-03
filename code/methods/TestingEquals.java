@@ -1,4 +1,3 @@
-
 public class TestingEquals
 {
   public static void main(String [] args)

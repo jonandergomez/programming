@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * Class for testing the use of objects of the class <b>AskingForDate</b>.

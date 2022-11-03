@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Calendar;
+import java.util.InputMismatchException;
 
 /**
  * Class for testing the use of objects of the class <b>ClassesForAnObject</b>.

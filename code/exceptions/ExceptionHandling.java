@@ -1,5 +1,6 @@
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class ExceptionHandling
 {

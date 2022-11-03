@@ -62,6 +62,8 @@ public class Pluviometer
 
             Object o = ois.readObject();
 
+            ois.close();
+
             if (o instanceof Pluviometer)
                 p = (Pluviometer)o;
             else

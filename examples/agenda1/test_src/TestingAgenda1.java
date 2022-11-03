@@ -35,11 +35,11 @@ public class TestingAgenda1
                            random(0,23), random(0,59), random(0,59));
         t2 = new Timestamp(random(1950,2030), random(1,12), random(1,28),
                            random(0,23), random(0,59), random(0,59));
-        showTimeDeltas(t1,t2);
+        showTimeDeltas(t1, t2);
         System.out.println();
 
         t2 = t1.clone();
-        t2.addMinutes(30*random(1,4));
+        t2.addMinutes(30 * random(1,4));
 
         Event e = new Event(t1, t2, "Important meeting", "Virtual via Teams");
 
@@ -47,7 +47,7 @@ public class TestingAgenda1
         System.out.println();
 
         t2 = t1.clone();
-        t2.addMinutes(30*random(1,6));
+        t2.addMinutes(30 * random(1,6));
         e = new Event(t1, t2, "Beers & tapas with friends", "Bar Levante");
         System.out.println(e);
         System.out.println();
@@ -66,6 +66,6 @@ public class TestingAgenda1
 
     private static int random(int min, int max)
     {
-        return min + (int)((max-min+1)*Math.random());
+        return min + (int)((max - min + 1) * Math.random());
     }
 }

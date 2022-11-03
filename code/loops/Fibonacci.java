@@ -1,5 +1,5 @@
-import java.util.*;
-import java.io.*;
+import java.util.Locale;
+import java.util.Scanner;
 
 /*
   More info in the following link:
@@ -10,7 +10,6 @@ import java.io.*;
 public class Fibonacci
 {
     private static Scanner input = new Scanner(System.in).useLocale(Locale.US);
-
 
     public static void main(String [] args)
     {

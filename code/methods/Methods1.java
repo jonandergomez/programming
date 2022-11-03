@@ -1,5 +1,5 @@
-public class Methods1 {
-
+public class Methods1
+ {
     public static void change(int j, int k)
     {
         int aux = j;

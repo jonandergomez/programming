@@ -1,7 +1,5 @@
-
-
-import java.util.*;
-import java.io.*;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Exponential
 {

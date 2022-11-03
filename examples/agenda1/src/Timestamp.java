@@ -11,7 +11,8 @@ import java.util.Calendar;
 public class Timestamp
 {
     /** Array containing the days per month. Useful for checking correct dates. */
-    private final static int [] daysPerMonth = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+    private final static int [] daysPerMonth = {0, 31, 28, 31, 30, 31, 30,
+                                                   31, 31, 30, 31, 30, 31};
 
     /** Year, potentially all integer values are considered as valid. */
     private int year;
@@ -33,7 +34,7 @@ public class Timestamp
     {
         Calendar now = Calendar.getInstance();
         year    = now.get(Calendar.YEAR);
-        month   = now.get(Calendar.MONTH)+1; // +1 because month is stored with values ranging from 0 to 11
+        month   = now.get(Calendar.MONTH) + 1; // +1 because month is stored with values ranging from 0 to 11
         day     = now.get(Calendar.DAY_OF_MONTH);
         hour    = now.get(Calendar.HOUR_OF_DAY);
         minutes = now.get(Calendar.MINUTE);
@@ -71,6 +72,18 @@ public class Timestamp
         if (!(1 <= this.seconds && this.seconds <= 59))
             throw new RuntimeException("Invalild seconds!");
         */
+    }
+    public Timestamp(String s)
+    {
+        // 000000000011111111112
+        // 012345678901234567890
+        // yyyy-mm-dd HH:MM:SS
+        this.year    = Integer.parseInt(s.substring( 0,  4));
+        this.month   = Integer.parseInt(s.substring( 5,  7));
+        this.day     = Integer.parseInt(s.substring( 8, 10));
+        this.hour    = Integer.parseInt(s.substring(11, 13));
+        this.minutes = Integer.parseInt(s.substring(14, 16));
+        this.seconds = Integer.parseInt(s.substring(17, 19));
     }
 
     /**

@@ -79,7 +79,7 @@ public class Contact
       * Returns the age of a person.
       * @return An integer with the date of a person computed with respect today.
       */
-    public int    getAge( Date reference ) { return birthDate.getAge( reference ); }
+    public int getAge(Date reference) { return birthDate.getAge(reference); }
 
     /**
       * Returns the month of the birth date of a person.
@@ -98,14 +98,14 @@ public class Contact
     @Override
     public boolean equals(Object o)
     {
-        if ( o instanceof Contact ) {
+        if (o instanceof Contact) {
             Contact other = (Contact)o;
 
-            return this.lastname.equals( other.lastname )
-                && this.name.equals( other.name )
-                // && this.email.equals( other.email )
-                // && this.phoneNumber.equals( other.phoneNumber )
-                && this.birthDate.equals( other.birthDate );
+            return this.lastname.equals(other.lastname)
+                && this.name.equals(other.name)
+                // && this.email.equals(other.email)
+                // && this.phoneNumber.equals(other.phoneNumber)
+                && this.birthDate.equals(other.birthDate);
         }
         return false;
     }
@@ -124,9 +124,9 @@ public class Contact
       *         zero when both objects have the same canonical name, and a positive
       *         value when the current object should go after the other in a sorted list.
       */
-    public int compareTo( Contact other )
+    public int compareTo(Contact other)
     {
-        return this.getCanonicalName().compareTo( other.getCanonicalName() );
+        return this.getCanonicalName().compareTo(other.getCanonicalName());
     }
 
     /** Returns representation of the contact including all the attributes.
@@ -139,10 +139,10 @@ public class Contact
     @Override
     public String toString()
     {
-        return String.format( "%s  %-30.30s  %-20.20s  %s",
-                               birthDate.toString(),
-                               getCanonicalName(),
-                               email,
-                               phoneNumber );
+        return String.format("%s  %-30.30s  %-20.20s  %s",
+                              birthDate.toString(),
+                              getCanonicalName(),
+                              email,
+                              phoneNumber);
     }
 }

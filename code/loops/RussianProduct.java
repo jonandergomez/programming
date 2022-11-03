@@ -1,6 +1,4 @@
-
-import java.util.*;
-import java.io.*;
+import java.util.Random;
 
 /*
   See more details in this link:

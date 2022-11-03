@@ -1,6 +1,5 @@
 package etsinf.prg.agenda2;
 
-
 /**
   * Simple class for represeting a date with year, month and day.
   * Used in the class <code>Contact</date> for attributed <em>birth date</em>.

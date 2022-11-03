@@ -75,6 +75,12 @@ public class Event
       */
     public String getLocation() { return location; }
 
+    /** Returns the number of attendants.
+      *
+      * @return An integer: The number of attendants to the event.
+      */
+    public int getAttendants() { return attendants; }
+
     /** Returns the duration of the event.
       *
       * @return A reference to a new object of the class <code>TimeDelta</code>
@@ -118,7 +124,7 @@ public class Event
     /** Increseases the number of attendants to this event. */
     public void addAttendant() { ++attendants; }
 
-    /** Returns the duration of the event.
+    /** Returns a string representation of the event.
       *
       * @return A reference to a new object of the class <code>String</code>
       *         created when this method is invoked using the current values of

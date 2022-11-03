@@ -81,7 +81,7 @@ public class TimeDelta
             // seconds corresponding to all entire days between both timestamps
             seconds = days * 24 * 60 * 60;
              // add all the seconds of the first day as an entire day
-            seconds += 24*60*60;
+            seconds += 24 * 60 * 60;
             // subtract the seconds of the first day according to the starting time within the day
             seconds -= ((start.getHour() * 60 + start.getMinutes()) * 60 + start.getSeconds());
             // add the seconds of the ending day
@@ -100,11 +100,11 @@ public class TimeDelta
     /** Returns the total number of entire hours in the lapse of time.
       * @return Total number of entire hours.
       */
-    public long getTotalHours() { return seconds / (60*60); }
+    public long getTotalHours() { return seconds / (60 * 60); }
     /** Returns the total number of entire days in the lapse of time.
       * @return Total number of entire days.
       */
-    public long getTotalDays() { return seconds / (24*60*60); }
+    public long getTotalDays() { return seconds / (24 * 60 * 60); }
 
     /** Returns an string representing the object. Some examples:
       * <ul>
