@@ -1,4 +1,7 @@
 import java.util.*;
+
+import javax.swing.text.LayeredHighlighter.LayerPainter;
+
 import java.io.*;
 
 public class Date implements Serializable
@@ -56,4 +59,62 @@ public class Date implements Serializable
 
         return age;
     }
+
+    public static boolean leapYear(int y)
+    {
+        return y % 4 == 0 && y % 100 != 0 && y % 400 == 0;
+    }
+    public boolean leapYear()
+    {
+        return leapYear(this.year);
+    }
+
+    public Date nextDay()
+    {
+        int d = this.day + 1;
+        int m = this.month;
+        int y = this.year;
+
+        int daysOfMonth = 31;
+        switch(m) {
+            case  2:
+                daysOfMonth = 28;
+                if (leapYear(y)) daysOfMonth++;
+                break;
+
+            case  4:
+            case  6:
+            case  9:
+            case 11: daysOfMonth = 30; break;
+
+            default : daysOfMonth = 31;
+        }
+        if (d > daysOfMonth) {
+            d = 1;
+            m++;
+            if (m > 12) {
+                m = 1;
+                y++;
+            }
+        }
+        return new Date(d, m, y);
+    }
+
+    public static void main(String [] args)
+    {
+        Date today = new Date(31, 12, 2022);
+
+        Date tomorrow = today.nextDay();
+
+        System.out.println(today);
+        System.out.println(tomorrow);
+    }
+
 }
+
+
+
+
+
+
+
