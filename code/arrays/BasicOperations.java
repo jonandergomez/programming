@@ -100,7 +100,7 @@ public class BasicOperations
      */
     public void add(int x)
     {
-        if (n == v.length) increaseSize(10);
+        if (n == v.length) increaseCapacity(10);
 
         v[n++] = x;
     }
@@ -113,7 +113,7 @@ public class BasicOperations
      */
     public void insert(int x, int pos)
     {
-        if (n == v.length) increaseSize(10);
+        if (n == v.length) increaseCapacity(10);
 
         // Move all the existing elements from pos to n one position to the right.
         for (int i = n; i > pos; i--) v[i] = v[i - 1];
@@ -131,7 +131,7 @@ public class BasicOperations
      */
     public void insertInOrder(int x)
     {
-        if (n == v.length) increaseSize(10);
+        if (n == v.length) increaseCapacity(10);
 
         int i = n - 1;
         // Shifting one position to the right all the values in v greater than x.
@@ -149,7 +149,7 @@ public class BasicOperations
      * 
      * @param s Number of new positions to be available in the array.
      */
-    public void increaseSize(int s)
+    public void increaseCapacity(int s)
     {
         // Creation of a new array larger than the existing one.
         int [] newArray = new int [v.length + s];

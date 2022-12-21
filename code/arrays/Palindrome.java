@@ -6,14 +6,16 @@ public class Palindrome
         char [] v = s.toCharArray();
         int n = v.length;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; /* i++ */) {
             if (v[i] == ' ') {
                 n--;
                 for (int j = i; j < n; j++) v[j] = v[j + 1];
+            } else {
+                i++;
             }
         }
 
-        int left = 0, right = n;
+        int left = 0, right = n - 1;
 
         while (left < right && v[left] == v[right]) {
             left++;

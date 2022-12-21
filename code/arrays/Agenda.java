@@ -166,6 +166,25 @@ public class Agenda
         return sb.toString();
     }
 
+    public Contact [] retrievePeopleWhoBornInMonth(int month)
+    {
+        int n = 0;
+
+        for (int i = 0; i < size; i++)
+            if (data[i].getMonthOfBirth() == month) n++;
+
+        Contact [] bornInMonth = new Contact[n];
+
+        n = 0;
+
+        for (int i = 0; i < size; i++)
+            if (data[i].getMonthOfBirth() == month)
+                bornInMonth[n++] = data[i];
+
+        return bornInMonth;
+    }
+
+
     private void sort()
     {
         for (int i = 1; i < size; i++) {
