@@ -121,4 +121,16 @@ public class Sums
 
         return p;
     }
+
+    public static double sum_x_raised_n(double x, int n)
+    {
+        double s = 0.0, p = 1.0;
+        
+        for (int i = 0; i < n; i++) {
+            s += p;
+            p *= x;
+        }
+
+        return s;
+    }
 }

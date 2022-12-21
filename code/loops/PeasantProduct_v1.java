@@ -6,7 +6,7 @@ import java.util.Random;
     https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication
 */
 
-public class RussianProduct
+public class PeasantProduct_v1
 {
     public static int iterative(int a, int b)
     {
