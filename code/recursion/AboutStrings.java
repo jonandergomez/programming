@@ -41,7 +41,7 @@ public class AboutStrings
 
         As homework do the version with isSuffix
     */
-    private static boolean isContained(String text, String pattern)
+    private static boolean isContained_r(String text, String pattern)
     {
         if (pattern.length() == 0)
             return true;
@@ -50,7 +50,24 @@ public class AboutStrings
         else if (isPrefix(text, pattern))
             return true;
         else
-            return isContained(text.substring(1), pattern);
+            return isContained_r(text.substring(1), pattern);
+    }
+    private static boolean isContained_r(String text, String pattern, int t)
+    {
+        if (pattern.length() == 0)
+            return true;
+        else if (pattern.length() > text.length())
+            return false;
+        else if ()
+            return false;
+        else if (isSuffix_r(text, pattern, t, pattern.length() - 1))
+            return true;
+        else
+            return isContained_r(text, pattern, t - 1);
+    }
+    public static boolean isContained(String text, String pattern)
+    {
+        return isContained_r(text, pattern, text.length() - 1);
     }
     /*
         isPalindrome(t):
@@ -139,7 +156,8 @@ public class AboutStrings
         else if (pattern.charAt(pattern.length() - 1) != text.charAt(text.length() - 1))
             return false;
         else
-            return isSuffix_r(text.substring(0, text.length() - 1), pattern.substring(0, pattern.length() - 1));
+            return isSuffix_r(   text.substring(0,    text.length() - 1),
+                              pattern.substring(0, pattern.length() - 1));
     }
     private static boolean isSuffix_r(String text, String pattern, int t, int p)
     {
