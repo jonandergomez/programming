@@ -15,6 +15,18 @@ public class PascalTriangle
                 System.out.printf("  %5d", pascalTriangle(row, col));
             System.out.println();
         }
+
+        int [][] matrix = new int [n + 1][n + 1];
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++)
+                matrix[row][col] = pascalTriangle(row, col);
+
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++)
+                if (col == 1 || col == row)
+                    matrix[row][col] = 1;
+                else
+                    matrix[row][col] = matrix[row - 1][col -1] + matrix[row -1][col];
     }
 
     /*
