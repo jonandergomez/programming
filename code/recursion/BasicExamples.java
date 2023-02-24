@@ -21,14 +21,16 @@ public class BasicExamples
 
         int n = 55;
 
+        if (args.length > 0) n = Integer.parseInt(args[0]);
+
         long ms = System.currentTimeMillis();
         long f = fibonacci_i(n);
         ms = System.currentTimeMillis() - ms;
-        System.out.printf("Iterative version needed %.6f seconds\n", ms / 1.0e+3);
+        System.out.printf("Iterative version computed f(%d) = %d and needed %.6f seconds\n", n, f, ms / 1.0e+3);
         ms = System.currentTimeMillis();
         f = fibonacci_r(n);
         ms = System.currentTimeMillis() - ms;
-        System.out.printf("Recursive version needed %.6f seconds\n", ms / 1.0e+3);
+        System.out.printf("Recursive version computed f(%d) = %d and needed %.6f seconds\n", n, f, ms / 1.0e+3);
     }
 
     private static int natural(int n)
