@@ -5,6 +5,15 @@ import java.io.*;
 
 public class BinarySearch
 {
+    int linearSearch(int [] a, int x)
+    {
+        int i;
+
+        for (i = 0; i < a.length && a[i] != x; i++);
+
+        return i < a.length ? i : -1;
+    }
+
     int iterative(int [] a, int x)
     {
         int left = 0, right = a.length - 1;
