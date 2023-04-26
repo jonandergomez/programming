@@ -24,7 +24,7 @@ class TextWritingReadingIntegers
                                         new File(fileName))));
 
             while (scanner.hasNext()) {
-                System.out.println("Read value: "+scanner.nextInt());
+                System.out.println("Read value: " + scanner.nextInt());
             }
             scanner.close();
 

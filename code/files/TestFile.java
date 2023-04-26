@@ -5,7 +5,8 @@ class TestFile
     public static void main(String [] args)
     {
         //File f = new File("/users/jon/file.txt");
-        File f = new File("../test_dir/file4323.txt");
+        //File f = new File("../test_dir/file4323.txt");
+        File f = new File("/root/.bashrc");
 
         if (f.exists())
             System.out.println("File exists!");
