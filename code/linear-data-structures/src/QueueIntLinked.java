@@ -82,7 +82,7 @@ public class QueueIntLinked
 
         int temporary_value = first.getValue();
         first = first.getNext();
-        --size;
+        if (--size == 0) last = null;
         return temporary_value;
     }
 
