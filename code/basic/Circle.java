@@ -66,7 +66,8 @@ public class Circle {
     public String toString()
     {
         String res = "Circle with radius "+ radius;
-        res += ", colour " + colour + " and centred at (" + centreX + "," + centreY + ")";
+        res += ", colour " + colour
+            + " and centred at (" + centreX + "," + centreY + ")";
         return res;
     }
 }
