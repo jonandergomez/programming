@@ -11,6 +11,7 @@ public class NestedBlocks
 
             System.out.println(x);
         } // nested block ends
+
         System.out.println(x);
     } // outer block ends
 }

@@ -6,8 +6,8 @@ public class ExampleOfStandardInputOutput
 
     public static void main(String [] args)
     {
-        while (input.hasNext()) {
-            int value = input.nextInt();
+        while (input.hasNext()) { // Check if more values are available in the standard input
+            int value = input.nextInt(); // Read next token in the standard input and convert it to an integer
 
             if ((value % 2) == 0) {
                 System.out.println(value);
