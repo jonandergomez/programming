@@ -36,6 +36,32 @@ public class Matrices
         int [] r = vectorMatrixProduct(v2, b);
     }
 
+    private static int [] add(int [] a, int [] b)
+    {
+        if (a.length != b.length)
+            throw new RuntimeException("Incompatible arrays!!!");
+
+        int [] c = new int [a.length];
+
+        for (int i = 0; i < c.length; i++) {
+            c[i] = a[i] + b[i];
+        }
+
+        return c;
+    }
+    private static int [] elementWiseProduct(int [] a, int [] b)
+    {
+        if (a.length != b.length)
+            throw new RuntimeException("Incompatible arrays!!!");
+
+        int [] c = new int [a.length];
+
+        for (int i = 0; i < c.length; i++) {
+            c[i] = a[i] * b[i];
+        }
+
+        return c;
+    }
     private static int [][] add(int [][] a, int [][] b)
     {
         if (a.length != b.length || a[0].length != b[0].length)
@@ -46,6 +72,21 @@ public class Matrices
         for (int i = 0; i < r.length; i++) {
             for (int j = 0; j < r[i].length; j++) {
                 r[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        return r;
+    }
+    private static int [][] elementWiseProduct(int [][] a, int [][] b)
+    {
+        if (a.length != b.length || a[0].length != b[0].length)
+            throw new RuntimeException("Incompatible matrices!!!");
+
+        int [][] r = new int [a.length][a[0].length];
+
+        for (int i = 0; i < r.length; i++) {
+            for (int j = 0; j < r[i].length; j++) {
+                r[i][j] = a[i][j] * b[i][j];
             }
         }
 

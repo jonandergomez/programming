@@ -65,6 +65,25 @@ public class Agenda
         data[i + 1] = c;
         ++size;
     }
+    public void addInOrderUsingBirthDate(Contact c)
+    {
+        if (size == data.length) growArray();
+
+        data[size++] = c;
+        int i = size - 1;
+        while (i > 0 && data[i].getDateOfBirth().compareTo(data[i - 1].getDateOfBirth()) < 0) {
+            swap(i, i - 1);
+            --i;
+        }
+    }
+    public Agenda sort()
+    {
+        Agenda newAgenda = new Agenda();
+
+        for (int i = 0; i < this.size(); i++) newAgenda.addInOrderUsingBirthDate(this.getItemAt(i));
+
+        return newAgenda;
+    }
     private void swap(int i, int j)
     {
         Contact temp = data[i];

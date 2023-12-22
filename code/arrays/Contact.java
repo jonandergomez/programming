@@ -31,6 +31,8 @@ public class Contact
     public String getBirthDate() { return birthDate.toString(); }
     public int    getAge(Date reference) { return birthDate.getAge(reference); }
 
+    public Date getDateOfBirth() { return birthDate; }
+
     public int getMonthOfBirth() { return birthDate.getMonth(); }
 
     @Override
