@@ -1,7 +1,5 @@
-public class TestStudent3
-{
-    public static void main(String [] args)
-    {
+public class TestStudent3 {
+    public static void main(String[] args) {
         Student s = new Student("John Smith", 19);
         Person  p = new Person("John Smith", 19);
         Person  q = new Student("Patty Smith", 39);
@@ -12,5 +10,8 @@ public class TestStudent3
         System.out.println("----------: " + q.toString());
         System.out.println("----------: " + q);
         System.out.println("NewStudent: " + ns);
+
+        System.out.println();
+        ClassesForAnObject.listOfClasses(ns);
     }
 }

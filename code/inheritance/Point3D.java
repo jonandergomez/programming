@@ -44,16 +44,6 @@ public class Point3D extends Point2D
         this.z = z;
     }
 
-    /** Gets the value of the attribute x.
-        @return The value of x.
-    */
-    public double getX() { return super.getX(); }
-
-    /** Gets the value of the attribute y.
-        @return The value of y.
-    */
-    public double getY() { return super.getY(); }
-
     /** Gets the value of the attribute z.
         @return The value of z.
     */
@@ -62,14 +52,21 @@ public class Point3D extends Point2D
     /** Returns an String as representation of the object.
         @return The representation of this object.
     */
+    @Override
     public String toString()
     {
-        return String.format("(%.3f, %.3f, %.3f)", super.getX(), super.getY(), z);
+        return String.format("(%.3f, %.3f, %.3f)",
+                                this.getX(),
+                                this.getY(),
+                                z);
     }
 
+    @Override
     public double r()
     {
-        return Math.sqrt(super.getX() * super.getX() + super.getY() * super.getY() + z * z);
+        return Math.sqrt(super.getX() * super.getX()
+                       + super.getY() * super.getY()
+                       + z * z);
     }
     /*
     This method must be used from the parent class with caution.
