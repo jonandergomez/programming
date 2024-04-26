@@ -1,6 +1,7 @@
 import java.util.Calendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Date;
 
 /**
  * Example of class for asking the user for the three components a date.
