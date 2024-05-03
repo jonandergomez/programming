@@ -174,37 +174,38 @@ public class TestingAgenda2
     private static void saveToFile(Agenda agenda)
     {
         try {
-        PrintWriter pw = new PrintWriter(new File("agenda.txt"));
+            PrintWriter pw = new PrintWriter(
+                                new BufferedOutputStream(
+                                    new FileOutputStream(
+                                        new File("agenda.txt"))));
 
-        pw.println(agenda.getPeopleSize());
+            pw.println(agenda.getPeopleSize());
 
-        for (int i = 0; i < agenda.getPeopleSize(); ++i) {
-            Contact c = agenda.getContactAt(i);
-            pw.println(c.getLastName());
-            pw.println(c.getName());
-            pw.println(c.getEMail());
-            pw.println(c.getPhoneNumber());
-            pw.println(c.getBirthDate().replaceAll("-", " "));
-        }
+            for (int i = 0; i < agenda.getPeopleSize(); ++i) {
+                Contact c = agenda.getContactAt(i);
+                pw.println(c.getLastName());
+                pw.println(c.getName());
+                pw.println(c.getEMail());
+                pw.println(c.getPhoneNumber());
+                pw.println(c.getBirthDate().replaceAll("-", " "));
+            }
 
-        pw.println("####");
+            pw.println("####");
 
-        pw.println(agenda.getEventsSize());
+            pw.println(agenda.getEventsSize());
 
-        for (int i = 0; i < agenda.getEventsSize(); ++i) {
-            Event e = agenda.getEventAt(i);
+            for (int i = 0; i < agenda.getEventsSize(); ++i) {
+                Event e = agenda.getEventAt(i);
 
-            pw.println(e.getTitle());
-            pw.println(e.getLocation());
-            pw.println(e.getStart());
-            pw.println(e.getEnd());
-            pw.println(e.getAttendants());
-        }
+                pw.println(e.getTitle());
+                pw.println(e.getLocation());
+                pw.println(e.getStart());
+                pw.println(e.getEnd());
+                pw.println(e.getAttendants());
+            }
 
-        pw.close();
-        }
-        catch(Exception e)
-        {
+            pw.close();
+        } catch (Exception e) {
             e.printStackTrace(System.err);
             System.exit(-1);
         }
@@ -212,43 +213,49 @@ public class TestingAgenda2
     private static void loadFromFile(Agenda agenda)
     {
         try {
-        Scanner sf = new Scanner(new File("agenda.txt"));
+            Scanner sf = new Scanner(
+                            new BufferedInputStream(
+                                new FileInputStream(
+                                    new File("agenda.txt"))));
 
-        int n = sf.nextInt(); sf.nextLine();
-        while (--n >= 0) {
-            String lastname = sf.nextLine().trim();
-            String name = sf.nextLine().trim();
-            String email = sf.nextLine().trim();
-            String phoneNumber = sf.nextLine().trim();
-            int year = sf.nextInt();
-            int month = sf.nextInt();
-            int day = sf.nextInt();
+            int n = sf.nextInt();
             sf.nextLine();
+            while (--n >= 0) {
+                String lastname = sf.nextLine().trim();
+                String name = sf.nextLine().trim();
+                String email = sf.nextLine().trim();
+                String phoneNumber = sf.nextLine().trim();
+                int year = sf.nextInt();
+                int month = sf.nextInt();
+                int day = sf.nextInt();
+                sf.nextLine();
 
-            Contact c = new Contact(lastname, name, email, phoneNumber, new etsinf.prg.agenda2.Date(day, month, year));
-            System.out.println("Loaded " + c);
-            agenda.addInOrder(c);
-        }
-        sf.nextLine(); // to skip ####
-        n = sf.nextInt(); sf.nextLine();
-        while (--n >= 0) {
-            String title = sf.nextLine().trim();
-            String location = sf.nextLine().trim();
-            Timestamp start = new Timestamp(sf.nextLine().trim());
-            Timestamp   end = new Timestamp(sf.nextLine().trim());
-            int attendants = sf.nextInt(); sf.nextLine();
+                Contact c = new Contact(lastname, name, email, phoneNumber,
+                        new etsinf.prg.agenda2.Date(day, month, year));
+                System.out.println("Loaded " + c);
+                agenda.addInOrder(c);
+            }
+            sf.nextLine(); // to skip ####
+            n = sf.nextInt();
+            sf.nextLine();
+            while (--n >= 0) {
+                String title = sf.nextLine().trim();
+                String location = sf.nextLine().trim();
+                Timestamp start = new Timestamp(sf.nextLine().trim());
+                Timestamp end = new Timestamp(sf.nextLine().trim());
+                int attendants = sf.nextInt();
+                sf.nextLine();
 
-            System.out.println(start + " ---> " + end);
+                System.out.println(start + " ---> " + end);
 
-            Event e = new Event(start, end, title, location);
-            while (--attendants > 0) e.addAttendant();
-            System.out.println("Loaded " + e);
-            agenda.addInOrder(e);
-        }
-        sf.close();
-        }
-        catch(Exception e)
-        {
+                Event e = new Event(start, end, title, location);
+                while (--attendants > 0)
+                    e.addAttendant();
+                System.out.println("Loaded " + e);
+                agenda.addInOrder(e);
+            }
+            sf.close();
+        } catch (Exception e) {
             e.printStackTrace(System.err);
             System.exit(-1);
         }
