@@ -1,4 +1,4 @@
-10
+11
 Adderley
 Cannonball
 cannonball@bluenote.com
@@ -39,6 +39,11 @@ Thelonious S.
 t.s.monk@bluenote.com
 123456789
 1917 10 10
+Morin
+Edgar
+emorin@cess.fr
+842348234
+1921 07 08
 Parker
 Charlie Christopher
 bird@bluenote.com
@@ -54,12 +59,12 @@ pettiford@bluenote.com
 Jazz concert
 Jimmy Glass
 2019-10-11 22:00:00
-2019-10-11 23:59:59
+2019-10-11 23:59:00
 67
 Jazz concert
 Jimmy Glass
 2019-12-04 22:00:00
-2019-12-04 23:59:59
+2019-12-04 23:59:00
 43
 Jazz concert
 Jimmy Glass

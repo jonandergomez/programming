@@ -301,7 +301,7 @@ public class Agenda
         for (int i = 1; i < peopleSize; ++i) {
             int j = i;
             Contact temp = people[i];
-            while (j > 0 && people[j-1].compareTo(temp) > 0) {
+            while (j > 0 && people[j - 1].compareTo(temp) > 0) {
                 people[j] = people[j - 1];
                 j--;
             }
