@@ -274,7 +274,7 @@ public class QueueIntLinked
         NodeInt previous = null;
         NodeInt current = this.first;
         for (int i = 0; i < this.size() / 2; i++) {
-            previous = null;
+            previous = current;
             current = current.getNext();
         }
 

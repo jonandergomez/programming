@@ -78,10 +78,10 @@ public class Agenda
         // after the new one
         int i = peopleSize - 1;
         while (i >= 0 && c.compareTo(people[i]) < 0) {
-            people[i+1] = people[i];
+            people[i + 1] = people[i];
             --i;
         }
-        people[i+1] = c;
+        people[i + 1] = c;
         ++peopleSize;
     }
     public void addInOrder(Event e)

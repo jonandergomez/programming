@@ -55,7 +55,7 @@ public class Date
     {
         int age = reference.year - this.year;
 
-        if (this.month * 100 + this.day < reference.month * 100 + reference.day)
+        if (this.month * 100 + this.day > reference.month * 100 + reference.day)
             age--;
 
         return age;
