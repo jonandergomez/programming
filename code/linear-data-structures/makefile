@@ -1,8 +1,8 @@
 
 
 all:
-	#javac -cp classes -d classes src/*.java
-	javac -cp . -d . src/*.java
+	javac -cp classes -d classes src/*.java
+	#javac -cp . -d . src/*.java
 
 clean:
 	rm -rf classes/*

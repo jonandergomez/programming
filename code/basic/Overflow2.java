@@ -9,5 +9,7 @@ public class Overflow2
         System.out.printf(" %e * 10 = %e\n", d, d * 10);
 
         System.out.printf(" (5.0 / 0.0) + 166.386 = %f\n", (5.0 / 0.0) + 166.386);
+
+        System.out.printf(" (0.0 / 0.0) + 166.386 = %f\n", (0.0 / 0.0) + 166.386);
     }
 }

@@ -1,3 +1,5 @@
+package linear;
+
 public class LinkedSequences
 {
     public static NodeInt insert(int value, NodeInt first, NodeInt previous)

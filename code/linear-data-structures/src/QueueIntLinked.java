@@ -288,4 +288,36 @@ public class QueueIntLinked
 
         return newQ;
     }
+    public static QueueIntLinked naturalMerge(QueueIntLinked a, QueueIntLinked b)
+    {
+        QueueIntLinked c = new QueueIntLinked();
+
+        while (!a.isEmpty() && !b.isEmpty())
+            c.push(a.front() < b.front() ? a.pop() : b.pop());
+        while (!a.isEmpty()) c.push(a.pop());
+        while (!b.isEmpty()) c.push(b.pop());
+        return c;
+    }
+    public void naturalMerge(QueueIntLinked other)
+    {
+        // home work
+        // with no using methods push(), pop(), isEmpty(), front()
+    }
+    public void mergeSort()
+    {
+        if (this.size() > 1) {
+
+            QueueIntLinked secondHalf = this.splitQueue();
+
+            this.mergeSort();
+            secondHalf.mergeSort();
+
+            // this.naturalMerge(secondHalf);
+            QueueIntLinked temp = naturalMerge(this, secondHalf);
+            
+            this.first = temp.first;
+            this.last = temp.last;
+            this.size = temp.size;
+        }
+    }
 }
