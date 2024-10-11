@@ -6,6 +6,8 @@
 
 public class Point
 {
+    public final static double EPSILON = 1.0e-5;
+
     /** attribute for abscissas, x-axis */
     private double x;
     /** attribute for ordinates, y-axis */
@@ -141,7 +143,9 @@ public class Point
         if (other instanceof Point) {
             Point p = (Point)other;
 
-            return this.x == p.x && this.y == p.y;
+            //return this.x == p.x && this.y == p.y;
+            return Math.abs(this.x - p.x) <= EPSILON
+                && Math.abs(this.y - p.y) <= EPSILON;
 
         } else {
             return false;
