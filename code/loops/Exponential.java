@@ -27,16 +27,20 @@ public class Exponential
 
     private static double myExp1(double x, int n)
     {
+        // Loop initialization begins
         double sum = 1.0,
                num = 1.0,
                den = 1.0;
+        // Loop initialization ends
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) { // Loop guard
+            // Loop body begins
             System.out.printf("i = %4d %25.17e  %25.17e  %25.17e\n",
                                 i, num, den, sum);
             num *= x;
             den *= i;
             sum += num / den;
+            // Loop body ends
         }
 
         return sum;
@@ -45,12 +49,16 @@ public class Exponential
     {
         if (x < 0.0) return 1.0 / myExp2(-x, n);
 
+        // Loop initialization begins
         double sum = 1.0, term = 1.0;
+        // Loop initialization ends
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) { // Loop guard
+            // Loop body begins
             System.out.printf("i = %4d %25.17e  %25.17e\n", i, term, sum);
             term *= x / i;
             sum += term;
+            // Loop body ends
         }
         return sum;
     }
@@ -58,13 +66,17 @@ public class Exponential
     {
         if (x < 0.0) return 1.0 / myExp3(-x, epsilon);
 
+        // Loop initialization begins
         double sum = 1.0, term = 1.0;
         int i = 0;
+        // Loop initialization ends
         //while (term > epsilon) {
-        while (sum + term != sum) {
+        while (sum + term != sum) { // Loop guard
+            // Loop body begins
             System.out.printf("i=%6d    %25.17e  %25.17e\n", ++i, term, sum);
             term *= x / i;
             sum += term;
+            // Loop body ends
         }
         return sum;
     }

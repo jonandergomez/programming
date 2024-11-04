@@ -23,15 +23,19 @@ public class Exponential2
 
     public static double exp_1(double x, int n)
     {
+        // Loop initialization begins
         double sum = 1.0, num = 1.0, den = 1.0;
         boolean sign = (x < 0.0);
         x = Math.abs(x);
+        // Loop initialization ends
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) { // Loop guard
+            // Loop body begins
             num *= x;
             den *= i;
             sum += num / den;
             System.out.printf("%d %.17f %.17f %.17f\n", i, num, den, sum);
+            // Loop body ends
         }
 
         return (sign) ? 1.0 / sum : sum;
@@ -39,13 +43,17 @@ public class Exponential2
 
     public static double exp_2(double x, int n)
     {
+        // Loop initialization begins
         double sum = 1.0, term = 1.0;
+        // Loop initialization ends
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) { // Loop guard
+            // Loop body begins
             term *= x;
             term /= i;
             sum += term;
             //System.out.printf("%d %.17f %.17f\n", i, term, sum);
+            // Loop body ends
         }
 
         return sum;
@@ -53,19 +61,22 @@ public class Exponential2
     
     public static double exp_3(double x, double epsilon)
     {
+        // Loop initialization begins
         double sum = 1.0, term = 1.0;
         int i = 0;
         boolean sign = (x < 0.0);
         x = Math.abs(x);
+        // Loop initialization ends
 
-        while (Math.abs(term) > epsilon) {
+        while (Math.abs(term) > epsilon) { // Loop guard
+            // Loop body begins
             term *= x;
             term /= ++i;
             sum += term;
             System.out.printf("%d %.17f %.17f\n", i, term, sum);
+            // Loop body ends
         }
 
         return (sign) ? 1.0 / sum : sum;
     }
-    
 }

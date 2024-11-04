@@ -18,15 +18,19 @@ public class PeasantProduct_v2
 
 	public static int peasantProduct_1(int a, int b)
 	{
+        // Loop initialization begins
         int p = 0;
         int sign = 1;
         if (a < 0) { sign *= -1; a = -a; }
         if (b < 0) { sign *= -1; b = -b; }
+        // Loop initialization ends
 
-        while (b > 0) {
+        while (b > 0) { // Loop guard
+            // Loop body begins
             if (b % 2 != 0) p += a;
             a = a * 2;
             b = b / 2;
+            // Loop body ends
         }
 
         return sign * p;
@@ -34,18 +38,21 @@ public class PeasantProduct_v2
 
 	public static int peasantProduct_2(int a, int b)
 	{
+        // Loop initialization begins
         int p = 0;
         int sign = 1;
         if (a < 0) { sign *= -1; a = -a; }
         if (b < 0) { sign *= -1; b = -b; }
+        // Loop initialization ends
 
         do {
+            // Loop body begins
             if (b % 2 != 0) p += a;
             a = a * 2;
             b = b / 2;
-        } while (b > 0);
+            // Loop body ends
+        } while (b > 0); // Loop guard
 
         return sign * p;
 	}
-
 }

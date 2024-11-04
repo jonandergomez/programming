@@ -10,6 +10,7 @@ public class PeasantProduct_v1
 {
     public static int iterative(int a, int b)
     {
+        // Loop initialization begins
         int p = 0;
         int sign = 1;
 
@@ -17,19 +18,22 @@ public class PeasantProduct_v1
         if (a < 0) { sign = -1; a = -a; }
 
         if (a < b) { int temp = a; a = b; b = temp; }
+        // Loop initialization ends
 
-        while (b > 0) {
-
+        while (b > 0) { // Loop guard
+            // Loop body begins
             if ((b % 2) == 1) p += a;
 
             a <<= 1;
             b >>= 1;
+            // Loop body ends
         }
 
         return sign * p;
     }
     public static int iterative_debug(int a, int b)
     {
+        // Loop initialization begins
         int p = 0;
         int sign = 1;
 
@@ -37,17 +41,19 @@ public class PeasantProduct_v1
         if (a < 0) { sign = -1; a = -a; }
 
         if (a < b) { int temp = a; a = b; b = temp; }
+        // Loop initialization ends
 
         System.out.printf("before the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
 
-        while (b > 0) {
-
+        while (b > 0) { // Loop guard
+            // Loop body begins
             if ((b % 2) == 1) p += a;
 
             System.out.printf("inside the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
 
             a <<= 1;
             b >>= 1;
+            // Loop body ends
         }
         System.out.printf(" after the loop: a = %15d  b = %15d  p = %15d\n", a, b, p);
 

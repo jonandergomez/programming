@@ -32,15 +32,18 @@ public class SimpleProduct
 
     public static int product(int a, int b, boolean verbose)
     {
+        // Loop initialization
         int sum = 0;
 
         if (verbose)
             System.out.printf("before the loop: a = %10d  b = %10d  sum = %10d\n", a, b, sum);
 
-        while (--b >= 0) {
+        while (--b >= 0) { // Loop guard
+            // Loop body begins
             sum += a;
             if (verbose)
                 System.out.printf("inside the loop: a = %10d  b = %10d  sum = %10d\n", a, b, sum);
+            // Loop body ends
         }
         if (verbose)
             System.out.printf(" after the loop: a = %10d  b = %10d  sum = %10d\n", a, b, sum);
