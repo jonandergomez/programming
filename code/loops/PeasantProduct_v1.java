@@ -11,13 +11,14 @@ public class PeasantProduct_v1
     public static int iterative(int a, int b)
     {
         // Loop initialization begins
-        int p = 0;
         int sign = 1;
 
         if (b < 0) { a = -a; b = -b; }
         if (a < 0) { sign = -1; a = -a; }
 
         if (a < b) { int temp = a; a = b; b = temp; }
+
+        int p = 0;
         // Loop initialization ends
 
         while (b > 0) { // Loop guard

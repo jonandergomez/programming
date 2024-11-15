@@ -23,7 +23,7 @@ public class Fibonacci
         long fib = 1, fib_ant = -1;
 
         for (int i = 0; i <= n; i++) {
-            fib = fib + fib_ant;
+            fib     = fib + fib_ant;
             fib_ant = fib - fib_ant;
         }
 
@@ -34,10 +34,34 @@ public class Fibonacci
         long fib = 1, fib_ant = -1;
 
         do {
-            fib = fib + fib_ant;
+            fib     = fib + fib_ant;
             fib_ant = fib - fib_ant;
         } while (--n >= 0);
 
         return fib;
     }
 }
+/*
+        fib    fib_ant     n
+==================================
+          1         -1     5
+          0          1     4
+          1          0     3
+          1          1     2
+          2          1     1
+          3          2     0
+          5          3    -1
+*/
+
+/*
+   ++n;
+   fib_ant = fib - fib_ant;
+   fib = fib - fib_ant;
+          1         -1     5
+          0          1     4
+          1          0     3
+          1          1     2
+          2          1     1
+          3          2     0
+          5          3    -1
+*/
