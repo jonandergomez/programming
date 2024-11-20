@@ -11,6 +11,8 @@ public class PrimeFactors
         computeAndShow(10);
         computeAndShow(100);
         computeAndShow(512);
+        computeAndShow(5417);
+        computeAndShow(5147);
 
         Random r = new Random();
 
