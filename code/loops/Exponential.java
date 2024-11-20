@@ -19,9 +19,9 @@ public class Exponential
                 n = Integer.parseInt(args[i + 1]);
         }
 
-        //System.out.printf("our computation %25.17e\n", myExp1(x,n));
-        //System.out.printf("our computation %25.17e\n", myExp2(x,n));
-        System.out.printf("our computation %25.17e\n", myExp3(x,epsilon));
+        //System.out.printf("our computation %25.17e\n", myExp1(x, n));
+        //System.out.printf("our computation %25.17e\n", myExp2(x, n));
+        System.out.printf("our computation %25.17e\n", myExp3(x, epsilon));
         System.out.printf("CPU computation %25.17e\n", Math.exp(x));
     }
 
@@ -33,14 +33,14 @@ public class Exponential
                den = 1.0;
         // Loop initialization ends
 
+        System.out.printf("i = %4d %25.17e  %25.17e  %25.17e\n", 0, num, den, sum);
         for (int i = 1; i <= n; i++) { // Loop guard
             // Loop body begins
-            System.out.printf("i = %4d %25.17e  %25.17e  %25.17e\n",
-                                i, num, den, sum);
             num *= x;
             den *= i;
             sum += num / den;
             // Loop body ends
+            System.out.printf("i = %4d %25.17e  %25.17e  %25.17e\n", i, num, den, sum);
         }
 
         return sum;
