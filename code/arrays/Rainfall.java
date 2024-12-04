@@ -256,7 +256,7 @@ public class Rainfall
                                                                                                year, ending_month, ending_day);
                     }
                     starting_month = starting_day = ending_month = ending_day = -1;
-                    counter=0;
+                    counter = 0;
                 }
             }
         }

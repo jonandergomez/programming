@@ -38,11 +38,11 @@ public class Rainfall1
     private static void fillRainfall(double rainProbability, int [] a)
     {
         Random r4day = new Random();
-        Random r4liters = new Random();
+        Random r4litres = new Random();
 
         for (int i = 1; i < a.length; i++) {
             if (r4day.nextDouble() > (1.0 - rainProbability)) {
-                a[i] = 10 + r4liters.nextInt(101);
+                a[i] = 10 + r4litres.nextInt(101);
             }
         }
     }
