@@ -76,7 +76,7 @@ public class Agenda
             --i;
         }
     }
-    public Agenda sort()
+    public Agenda cloneAndSortByBirthDate()
     {
         Agenda newAgenda = new Agenda();
 
