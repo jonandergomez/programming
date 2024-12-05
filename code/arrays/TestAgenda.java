@@ -59,14 +59,14 @@ public class TestAgenda
                     input.nextLine();
                     break;
                 case 8 :
-                    //saveToFile(agenda);
+                    saveToFile(agenda);
                     //saveToBinaryFile(agenda);
-                    saveToBinaryFile_v2(agenda);
+                    //saveToBinaryFile_v2(agenda);
                     break;
                 case 9 :
-                    // loadFromFile(agenda);
+                    loadFromFile(agenda);
                     // agenda = loadFromBinaryFile();
-                    loadFromBinaryFile_v2(agenda);
+                    // loadFromBinaryFile_v2(agenda);
                     break;
                 case 0 : break;
                 default :
