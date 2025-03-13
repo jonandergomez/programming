@@ -63,4 +63,24 @@ public class BinarySearch
             }
         }
     }
+    int recursive(String [] a, String x, int left, int right)
+    {
+        if (left > right) { // true when working with the empty slice
+
+            return -1; // x cannot belong to the empty slice
+
+        } else {
+
+            // check the central position of the current slice
+            int k = (left + right) / 2;
+            int rc = a[k].compareTo(x);
+            if (rc == 0) {
+                return k;
+            } else if (rc < 0) {
+                return recursive(a, x, k + 1, right);
+            } else /* if (rc > 0) */  {
+                return recursive(a, x, left, k - 1);
+            }
+        }
+    }
 }

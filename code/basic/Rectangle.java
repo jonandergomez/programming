@@ -32,6 +32,8 @@ public class Rectangle {
     public void setHeight(double h) { height = h; }
     public void setBase(double b) { base = b; }
 
+    public double getArea() { return base * height; }
+
     public Point getLowerLeftCorner() {
         return new Point(centre.getX() - base / 2, centre.getY() - height / 2);
     }

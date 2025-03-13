@@ -322,7 +322,7 @@ if __name__ == '__main__':
         pyplot.show()
     #
     if show_triangulation:
-        points = numpy.random.randn( 10, 2 )
+        points = numpy.random.randn( 60, 2 )
         center=points.mean(axis=0)
         pol = Polygon2d( points )
         pol.points.sort()
