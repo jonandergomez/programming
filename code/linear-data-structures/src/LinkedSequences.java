@@ -63,8 +63,8 @@ public class LinkedSequences
     {
         NodeInt first = null;
 
-        first = LinkedSequences.insert(5, first);
-        first = LinkedSequences.insertAtTheEnd(5, first);
-        first = LinkedSequences.insertAtTheBeginning(5, first);
+        first = LinkedSequences.insert(5, first, null);
+        first = LinkedSequences.append(5, first);
+        first = LinkedSequences.insert(5, null, first);
     }
 }

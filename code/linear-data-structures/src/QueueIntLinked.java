@@ -72,13 +72,13 @@ public class QueueIntLinked
      * <em>T(n) &isin; O(1)</em>
      *
      * @return Integer value stored at the first position of the queue.
-     * @throws Exception for indicating queue underflow if queue is empty.
+     * @throws RuntimeException for indicating queue underflow if queue is empty.
      */
     public int pop()
-        throws Exception
+        throws RuntimeException
     {
         if (size() == 0)
-            throw new Exception("Queue Underflow");
+            throw new RuntimeException("Queue Underflow");
 
         int temporary_value = first.getValue();
         first = first.getNext();
@@ -91,13 +91,13 @@ public class QueueIntLinked
      * <em>T(n) &isin; O(1)</em>
      *
      * @return Integer value stored at the first position of the queue.
-     * @throws Exception for indicating queue underflow if queue is empty.
+     * @throws RuntimeException for indicating queue underflow if queue is empty.
      */
     public int front()
-        throws Exception
+        throws RuntimeException
     {
         if (size() == 0)
-            throw new Exception("Queue Underflow");
+            throw new RuntimeException("Queue Underflow");
 
         return first.getValue();
     }
