@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class PeasantProduct_v2
+public class PeasantProduct
 {
     public static void main(String [] args)
     {
@@ -15,6 +15,23 @@ public class PeasantProduct_v2
         System.out.printf("%d * %d = %d\n", a, b, peasantProduct_1(a, b));
         System.out.printf("%d * %d = %d\n", a, b, peasantProduct_2(a, b));
     }
+    /*
+        Example of how the algorithm evolves for a = 892 and b = 757
+
+               a           b            b % 2          p
+          ---------------------------------------------------
+             892         757              1          892
+            1784         378              0          892
+            3568         189              1         4460
+            7136          94              0         4460
+           14272          47              1        18732
+           28544          23              1        47276
+           57088          11              1       104364
+          114176           5              1       218540
+          228352           2              0       218540
+          456704           1              1       675244
+                           0
+    */
 
 	public static int peasantProduct_1(int a, int b)
 	{
