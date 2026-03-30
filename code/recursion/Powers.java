@@ -8,6 +8,25 @@ public class Powers
      * @param n
      * @return x raised n
      */
+    public static long power_v0(int x, int n)
+    {
+        long p;
+
+        if (n == 0) {
+            p = 1;
+        } else {
+            p = x * power_v0(x, n - 1);
+        }
+
+        return p;
+    }
+    /**
+     * Recursive version of computing X raised N.
+     * 
+     * @param x
+     * @param n
+     * @return x raised n
+     */
     public static long power_v1(int x, int n)
     {
         long p;
