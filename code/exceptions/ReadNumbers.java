@@ -35,7 +35,6 @@ public class ReadNumbers
             finally {
                 input.nextLine(); // For cleaning the standard input buffer
             }
-
         } while (! correct);
 
         do {
@@ -55,6 +54,7 @@ public class ReadNumbers
             }
             catch (Exception e) {
                 correct = false;
+                //e.printStackTrace(System.err);   "2026-04-17 13:56:45"
                 System.err.println(e.getMessage());
             }
             finally {

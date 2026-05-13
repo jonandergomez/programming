@@ -26,7 +26,8 @@ class SeeDirectory
             System.out.println("--------------------------------");
         }
 
-        wipeFiles("../../..");
+        //wipeFiles("../../..");
+        wipeFiles(".");
     }
 
     public static void wipeFiles(String dirname)
